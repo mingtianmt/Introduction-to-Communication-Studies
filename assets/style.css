@@ -345,7 +345,7 @@ body{
 
 .detail-link{
   position: absolute;
-  right: 60px;
+  right: 80px;
   bottom: 50px;
   padding: 12px 28px;
   background: var(--theme-red);
