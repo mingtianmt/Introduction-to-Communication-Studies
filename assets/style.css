@@ -344,7 +344,6 @@ body{
 }
 
 .detail-link{
-  position: absolute;
   right: 80px;
   bottom: 50px;
   padding: 12px 28px;
