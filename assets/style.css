@@ -204,17 +204,47 @@ body{
 }
 
 .flipped-classroom{
-  max-width: var(--max-width);
-  margin: 0 auto 60px;
-  background: #fffef9;
+  display:grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 30px;
+  align-items: stretch;
+}
+
+.classroom-content{
+  position: relative;
+  padding: 50px;
+}
+
+.classroom-sidebar{
   border: 2px solid var(--theme-red);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  background: #fffef9;
+  padding: 30px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
 
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr; /* 左大右小 */
-  gap: 0;
-  overflow: hidden;
+.classroom-sidebar a{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 0;
+  border-bottom:1px dashed rgba(155,29,43,.3);
+  text-decoration:none;
+  color:var(--theme-gray);
+  font-size:15px;
+  transition:.2s;
+}
+
+.classroom-sidebar a:hover{
+  color:var(--theme-red);
+  transform:translateX(4px);
+}
+
+.classroom-sidebar span{
+  font-size:13px;
+  color:var(--theme-red);
 }
 
 .left-box{
