@@ -219,6 +219,7 @@ body{
 }
 
 .left-box{
+  min-height: 320px;
   background:#fffef9;
   border:2px solid var(--theme-red);
   border-radius: var(--radius);
@@ -340,8 +341,9 @@ body{
 }
 .detail-link{
   position: absolute;
-  right: 60px;
-  bottom: 50px;
+  right: 40px;
+  bottom: 30px;
+
   padding: 12px 28px;
   background: var(--theme-red);
   color: #fffef9;
