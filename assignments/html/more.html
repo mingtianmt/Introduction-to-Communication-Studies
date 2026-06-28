@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>翻转课堂全部成果 | 中国新闻传播史教学网站</title>
+
+  <style>
+    @font-face{
+      font-family:'FangZhengBangShu';
+      src:url('../../assets/fonts/title.ttf') format('truetype');
+    }
+    /* ---------- 0. 古籍纸纹变量 ---------- */
+    :root{
+      --paper:#F5F2E8;
+      --ink:#1E1E1E;
+      --cinnabar:#9B1D2B;
+      --gold:#C9A145;
+      --radius:8px;
+      --shadow:0 4px 12px rgba(0,0,0,.08);
+    }
+
+    /* ---------- 1. 基础重置 ---------- */
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:"思源黑体","Microsoft YaHei",sans-serif;
+      background: #F5F2E8 url('../assets/background.jpg') center/cover;
+      background-attachment: fixed;   /* 想固定就保留 */
+      color:var(--ink);
+      padding-top:100px;          /* 为固定 header 让位 */
+      line-height:1.8;
+    }
+
+    /* ---------- 2. 顶部卷轴 header ---------- */
+    .header{
+      position:fixed;
+      top:0;left:0;right:0;
+      z-index:999;
+      background:#fffef9;
+      border-bottom:2px solid var(--cinnabar);
+      box-shadow:var(--shadow);
+      display:flex;
+      flex-direction:column;
+      padding:18px 5vw;
+    }
+    .site-title{
+      letter-spacing:1.5px;
+      color:var(--cinnabar);
+    }
+    .site-title span:first-child{
+      font-size:42px;
+      font-family:'FangZhengBangShu', serif;
+      letter-spacing:0;
+    }
+    .site-title span:last-child{
+      font-size:25px;
+      font-family:'Times New Roman', Times, serif;
+    }
+
+    .subtitle{
+      align-self:flex-end;
+      font-size:16px;
+      color:var(--ink);
+      opacity:.8;
+      margin-top:4px;
+    }
+
+    /* ---------- 3. 容器 ---------- */
+    .more-wrapper{
+      max-width:1200px;
+      margin:0 auto;
+      padding:20px 5vw 60px;
+      padding-left:0;
+    }
+
+    /* ---------- 4. 章节标题：竖排小篆前饰 ---------- */
+    .section-title{
+      position:relative;
+      margin:40px 0 30px;
+      font-family:'Courier New', Courier, monospace;
+      font-size:26px;
+      color:var(--cinnabar);
+      padding-left:40px;
+    }
+    .section-title::before{
+      content:'研';
+      position:absolute;
+      left:0;top:-8px;
+      font-size:40px;
+      opacity:.15;
+    }
+
+    /* ---------- 5. 作业目录 ---------- */
+    .catalog-list {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 5vw 60px;
+      list-style: none;
+      border-left: 2px solid var(--cinnabar); /* 朱砂栏线 */
+      padding-left: 1.2em;
+    }
+    .catalog-list li {
+      margin: 10px 0;
+      font-size: 17px;
+      line-height: 1.9;
+      position: relative;
+    }
+    .catalog-list li::before { /* 小朱砂圆点 */
+      content: '';
+      position: absolute;
+      left: -0.6em;
+      top: 0.7em;
+      width: 6px;
+      height: 6px;
+      background: var(--cinnabar);
+      border-radius: 50%;
+    }
+    .catalog-list a {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: all .3s;
+    }
+    .catalog-list a:hover {
+      color: var(--cinnabar);
+      border-bottom-color: var(--cinnabar);
+    }
+
+    /* ---------- 6. 响应式 ---------- */
+    @media(max-width:1024px){
+      .assignment-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:600px){
+      .assignment-grid{grid-template-columns:1fr}
+    }
+
+    /* ---------- 7. 页面底部文本：中新史课程资料库 ---------- */
+    .footer-text {
+      text-align: center;              /* 文本居中 */
+      margin-top: 77px;                /* 上方留空 */
+      margin-bottom: 77px;             /* 下方留空 */
+      font-size: 15px;                 /* 适中的字号 */
+      color: #1E1E1E;                  /* 灰色，替代 var(--theme-gray) 如果没有定义 */
+    }
+
+    /* 高亮红色文字 */
+    .highlight-red {
+      color: var(--cinnabar); /* 红色，与页面主题红一致 */
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- 顶部卷轴 -->
+  <header class="header">
+    <h1 class="site-title">
+      <span>中国新闻传播史</span><span>教学网站</span>
+    </h1>
+    <p class="subtitle">
+      <span class="highlight-red">翻转课堂</span> | 第一课堂 | 第二课堂 
+    </p>
+  </header>
+
+  <!-- 正文区域 -->
+  <div class="more-wrapper">
+    <h2 class="section-title">翻转课堂：精选研讨成果</h2>
+
+    <ol class="catalog-list">
+      <li><a href="../../public/pdf/A.pdf" target="_blank">晚清报人的新闻思想与政治实践：梁启超的“新报”论（2024-01）</a></li>
+      <li><a href="../../public/pdf/B.pdf" target="_blank">近代来华传教士的多重身份：走近美国传教士与“汉学之父”卫三畏（2023-09）</a></li>
+      <li><a href="../../public/pdf/C.pdf" target="_blank">近代职业记者群的崛起：烽火玫瑰胡济邦（2024-08）</a></li>
+      <li><a href="../../public/video/D.mp4" target="_blank">近代职业记者群的崛起：民国女性新闻从业者的困境与出路（2023-02）</a></li>
+      <li><a href="../../public/pdf/E.pdf" target="_blank">抗战与媒介：抗战烽火中的《重大校刊》（2024-11）</a></li>
+      <li><a href="../../public/video/F.mp4" target="_blank">“重庆解放”的中外媒介叙事框架分析（2023-01）</a></li>
+      <li><a href="../../public/pdf/G.pdf" target="_blank">党报理论与实践：博古的党报实践与新闻思想（2020-13）</a></li>
+      <li><a href="../../public/pdf/H.pdf" target="_blank">党报理论与实践：瞿秋白与《新社会》之探析与思考（2020-11）</a></li>
+      <li><a href="../../public/pdf/I.pdf" target="_blank">报刊与体育救国论：奥运首秀与中国报界的“体育救国”思潮（2024-06）</a></li>
+      <li><a href="../../public/pdf/J.pdf" target="_blank">报刊阅读与市民生活：从传统报刊到新媒体矩阵（2019-10）</a></li>
+      <li><a href="../../public/pdf/K.pdf" target="_blank">见证中国革命的西方记者：“密苏里新闻帮”（2024-02）</a></li>
+      <li><a href="../../public/pdf/L.pdf" target="_blank">见证中国革命的西方记者：史沫特莱的来华初衷与报道成果（2024-14）</a></li>
+      <li><a href="../../public/pdf/M.pdf" target="_blank">报刊与体育救国论：1932年刘长春参加洛杉矶奥运会报道与“体育救国”思潮（2024-05）</a></li>
+      <li><a href="../../public/pdf/N.pdf" target="_blank">报刊阅读与市民生活：从《良友》画报中看近代中国社会生活的变迁（2019-13）</a></li>
+      <li><a href="../../public/pdf/O.pdf" target="_blank">党报理论与实践：被遗忘的新闻巨擎秦邦宪（2019-15）</a></li>
+      <li><a href="../../public/PDF/P.pdf" target="_blank">党报理论与实践：大跃进时期的”舆论“之论（2020-18）</a></li>
+      <li><a href="../../public/pdf/Q.pdf" target="_blank">党报理论与实践：大跃进时期的《人民日报》的报道特征与成因（2019-07）</a></li>
+      <li><a href="../../public/pdf/R.pdf" target="_blank">见证中国革命的西方记者：“密苏里新闻帮”与中国的对外宣传（2024-12）</a></li>
+      <li><a href="../../public/pdf/S.pdf" target="_blank">见证中国革命的西方记者：埃德加·斯诺与同时期西方来华记者群（2023-04）</a></li>
+      <li><a href="../../public/video/T.mp4" target="_blank">见证中国革命的西方记者：世界上第一双了解中国革命的眼睛——埃德加·斯诺（2023-04）</a></li>
+      <li><a href="../../public/video/U.mp4" target="_blank">见证中国革命的西方记者：西方来华记者史沫特莱（2023-08）</a></li>
+      <li><a href="../../public/pdf/V.pdf" target="_blank">近代职业记者群的崛起：“尽了几分天职”的女记者浦熙修（2023-10）</a></li>
+      <li><a href="../../public/pdf/W.pdf" target="_blank">近代职业记者群的崛起：“说人话说真话”的记者林白水研究综述(2020-04)</a></li>
+      <li><a href="../../public/pdf/X.pdf" target="_blank">近代职业记者群的崛起：中国首位战地女记者——张郁廉（2020-16）</a></li>      
+      <li><a href="../../public/pdf/Y.pdf" target="_blank">抗战与媒介：抗战时期中国共产党的宣传策略（2024-10）</a></li>
+      <li><a href="../../public/pdf/Z.pdf" target="_blank">抗战与媒介：抗战时期中国共产党在国统区的宣传策略（2020-14）</a></li>
+      <li><a href="../../public/pdf/AA.pdf" target="_blank">抗战与媒介：重庆大轰炸中的《重庆各报联合报》发行与终结探讨（2020-7）</a></li>
+      <li><a href="../../public/pdf/AB.pdf" target="_blank">女性与报刊：民国时期宋美龄媒介形象探讨（2020-03）</a></li>
+      <li><a href="../../public/pdf/AC.pdf" target="_blank">女性与报刊：晚清民国时期女性报刊发展评述（2020-05）</a></li>
+      <li><a href="../../public/pdf/AD.pdf" target="_blank">晚清报人的新闻思想与政治实践：康有为与梁启超的新闻思想比较（2019-12）</a></li>
+      <li><a href="../../public/pdf/AE.pdf" target="_blank">晚清报人的新闻思想与政治实践：王韬的“新报”论（2024-07）</a></li>
+      <li><a href="../../public/pdf/AF.pdf" target="_blank">晚清新旧报刊里的“太平天国”（2024-13）</a></li>
+    </ol>
+  </div>
+        <!-- 第二课堂部分结束后，添加空白和文本 -->
+  <section class="footer-text">
+    <p>中新史课程资料库</p>
+    <p>重庆市高等教育教学改革研究一般项目资助（项目号：223012）</p>
+  </section>
+
+</body>
+</html>

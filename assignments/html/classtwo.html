@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第二课堂详情 - 中国新闻传播史 教学网站</title>
+
+  <style>
+    @font-face{
+      font-family:'FangZhengBangShu';
+      src:url('../../assets/fonts/title.ttf') format('truetype');
+    }
+    /* ---------- 0. 古籍纸纹变量 ---------- */
+    :root{
+      --paper:#F5F2E8;
+      --ink:#1E1E1E;
+      --cinnabar:#9B1D2B;
+      --gold:#C9A145;
+      --radius:8px;
+      --shadow:0 4px 12px rgba(0,0,0,.08);
+    }
+
+    /* ---------- 1. 基础重置 ---------- */
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:"思源黑体","Microsoft YaHei",sans-serif;
+      background: #F5F2E8 url('../assets/background.jpg') center/cover;
+      background-attachment: fixed;   /* 想固定就保留 */
+      color:var(--ink);
+      padding-top:100px;          /* 为固定 header 让位 */
+      line-height:1.8;
+    }
+
+    /* ---------- 2. 顶部卷轴 header ---------- */
+    .header{
+      position:fixed;
+      top:0;left:0;right:0;
+      z-index:999;
+      background:#fffef9;
+      border-bottom:2px solid var(--cinnabar);
+      box-shadow:var(--shadow);
+      display:flex;
+      flex-direction:column;
+      padding:18px 5vw;
+    }
+    .site-title{
+      letter-spacing:1.5px;
+      color:var(--cinnabar);
+    }
+    .site-title span:first-child{
+      font-size:42px;
+      font-family:'FangZhengBangShu', serif;
+    }
+    .site-title span:last-child{
+      font-size:25px;
+      font-family:'Times New Roman', Times, serif;
+    }
+    .subtitle{
+      align-self:flex-end;
+      font-size:16px;
+      color:var(--ink);
+      opacity:.8;
+      margin-top:4px;
+    }
+
+    /* ---------- 3. 容器 ---------- */
+    .container{
+      max-width:1200px;
+      margin:0 auto;
+      padding:20px 5vw;
+    }
+
+    /* ---------- 4. 章节标题：竖排小篆前饰 ---------- */
+    .section-title{
+      position:relative;
+      margin:40px 0 20px;
+      font-family:'Times New Roman', Times, serif;
+      font-size:26px;
+      color:var(--cinnabar);
+      padding-left:40px;
+    }
+    .section-title::before{
+      content:'展';
+      position:absolute;
+      left:0;top:-8px;
+      font-size:40px;
+      opacity:.15;
+    }
+
+    /* ---------- 5. 展示图片区域：宣纸相框 ---------- */
+    .showcase-wrap{
+      text-align:center;
+      margin:40px 0;
+    }
+    .showcase-wrap img{
+      max-width:800px;
+      width:100%;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      border:1px solid var(--cinnabar);
+      transition:transform .3s;
+    }
+    .showcase-wrap img:hover{transform:scale(1.01)}
+
+    /* ---------- 6. 响应式 ---------- */
+    @media(max-width:768px){
+      .header{padding:12px 20px}
+      .subtitle{margin-right:0;font-size:14px}
+    }
+
+    /* ---------- 7. 页面底部文本：中新史课程资料库 ---------- */
+    .footer-text {
+      text-align: center;              /* 文本居中 */
+      margin-top: 77px;                /* 上方留空 */
+      margin-bottom: 77px;             /* 下方留空 */
+      font-size: 15px;                 /* 适中的字号 */
+      color: #1E1E1E;                  /* 灰色，替代 var(--theme-gray) 如果没有定义 */
+    }
+
+    /* 高亮红色文字 */
+    .highlight-red {
+      color: var(--cinnabar); /* 红色，与页面主题红一致 */
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <!-- 顶部卷轴 -->
+  <header class="header">
+    <h1 class="site-title">
+      <span>中国新闻传播史</span><span>教学网站</span>
+    </h1>
+    <p class="subtitle">
+      翻转课堂 | 第一课堂 | <span class="highlight-red">第二课堂</span>  
+    </p>
+  </header>
+
+  <!-- 页面主体 -->
+  <main class="container">
+    <h2 class="section-title">第二课堂：优秀作品展览</h2>
+    <div class="showcase-wrap">
+      <img src="../assets/table.jpg" alt="优秀作品展览">
+    </div>
+    <h2 class="section-title">第二课堂：教师自主开发PBL项目</h2>
+    <div class="showcase-wrap">
+      <img src="../assets/table2.jpg" alt="口述史工作室">
+    </div>
+  </main>
+
+    <!-- 第二课堂部分结束后，添加空白和文本 -->
+  <section class="footer-text">
+    <p>中新史课程资料库</p>
+    <p>重庆市高等教育教学改革研究一般项目资助（项目号：223012）</p>
+  </section>
+</body>
+</html>

@@ -1,0 +1,304 @@
+/* ===== 0. 字体 ===== */
+@font-face{
+  font-family:'FangZhengBangShu';
+  src:url('fonts/title.ttf') format('truetype');
+}
+@font-face{
+  font-family:'FZ-LiShu';
+  src:url('https://cdn.jsdelivr.net/npm/@static-fonts/fangzheng-lishu@1.0.0/FangZhengBangShuJianTi-1.ttf') format('truetype');
+}
+@font-face{
+  font-family:'PangMen';
+  src:url('https://cdn.jsdelivr.net/npm/pangmen-zhengdao-cushu@1.0.0/PangMenZhengDaoCuShuTi-1.ttf') format('truetype');
+}
+
+:root{
+  --theme-red:#9B1D2B;
+  --theme-gray:#1E1E1E;
+  --paper:#F5F2E8;
+  --gold:#C9A145;
+  --radius:8px;
+  --shadow:0 4px 12px rgba(0,0,0,.08);
+  --max-width:1200px;
+}
+
+/* ===== 1. 基础 ===== */
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:"思源黑体","Microsoft YaHei",sans-serif;
+  background:#F5F2E8 url('background.jpg') center/cover fixed;
+  color:var(--theme-red);
+  line-height:1.75;
+}
+
+/* ===== 2. 顶部导航 ===== */
+.header{
+  background:#fffef9 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" opacity=".04"><rect fill="%239B1D2B" x="0" y="0" width="1" height="100"/></svg>');
+  border-bottom:2px solid var(--theme-red);
+  box-shadow:var(--shadow);
+  padding:18px 5vw;
+  display:flex;
+  flex-direction:column;
+}
+.site-title{letter-spacing:1.5px;color:var(--theme-red);}
+.site-title span:first-child{font-size:42px;font-family:'FangZhengBangShu',serif;}
+.site-title span:last-child{font-size:25px;font-family:'Times New Roman',Times,serif;}
+.subtitle{align-self:flex-end;font-size:16px;color:var(--theme-red);opacity:.8;margin-top:4px;}
+
+/* ===== 3. 搜索区域（关键：随页面缩放等比） ===== */
+.search-section{
+  max-width: var(--max-width);
+  margin:0 auto;
+  padding:50px 5vw;
+  background:url('background.jpg') center/cover no-repeat;
+  border-radius:0 0 var(--radius) var(--radius);
+  text-align:center;
+}
+.search-box{
+  display:flex;
+  gap:12px;
+  max-width:800px;
+  margin:0 auto;
+  justify-content:center;
+}
+.search-box input{
+  flex:1;
+  padding:14px 20px;
+  border:1px solid var(--theme-red);
+  border-radius:var(--radius);
+  background:#fffef9;
+  font-size:16px;
+  transition:.3s;
+}
+.search-box input:focus{
+  outline:none;
+  box-shadow:0 0 0 3px rgba(155,29,43,.2);
+}
+.search-box button{
+  padding:14px 28px;
+  background:var(--theme-red);
+  color:#fff;
+  border:none;
+  border-radius:var(--radius);
+  cursor:pointer;
+  font-size:15px;
+  transition:.3s;
+}
+.search-box button:hover{background:#7a1621}
+#clearBtn{background:var(--gold)}
+#clearBtn:hover{background:#a8863f}
+
+#searchResults{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:20px 5vw;
+  display:none;
+}
+
+/* ===== 4. 装饰 Banner（paper.jpg 随页面缩放完美同步） ===== */
+.banner{
+  max-width: var(--max-width);   /* 关键一行 */
+  margin: 0 auto;                /* 关键一行 */
+  overflow: hidden;
+}
+.banner img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+/* ===== 5. 翻转课堂标题（关键修复：完全随页面缩放） ===== */
+.assignment-title{
+  max-width:var(--max-width);
+  margin:40px auto 20px;
+  text-align:center;
+  font-size:0;                    /* 必须保留，让子级自行控制大小 */
+  line-height:1;
+  margin-top:-200px;
+  position:relative;
+}
+.assignment-title span:first-child{
+  font-family:'Times New Roman',Times,serif;
+  font-size:38px;                 /* 基准大小，随页面缩放等比 */
+  color:var(--theme-red);
+  margin-right:0.3em;
+}
+.assignment-title span:last-child{
+  font-family:'Times New Roman',Times,serif;
+  font-size:32px;
+  color:var(--theme-gray);
+}
+.assignment-title::after{
+  content:"";
+  display:block;
+  height:4px;
+  width:140px;
+  margin:12px auto 0;
+  background:linear-gradient(to right,transparent,var(--theme-red) 35%,var(--theme-red) 65%,transparent);
+  border-radius:2px;
+}
+.assignment-more{
+  max-width:var(--max-width);
+  margin:0 auto 30px;
+  text-align:right;
+  padding-right:40px;
+}
+
+/* ===== 6. 作业卡片网格 ===== */
+.assignment-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:24px;
+  max-width:var(--max-width);
+  margin:0 auto 80px;
+  padding:0 40px;
+}
+.assignment-card{
+  background:#fffef9;
+  border:2px solid var(--theme-red);
+  border-radius:var(--radius);
+  padding:18px;
+  box-shadow:var(--shadow);
+  transition:transform .3s,box-shadow .3s;
+  position:relative;
+  overflow:hidden;
+}
+.assignment-card::before{
+  content:'';position:absolute;left:0;top:0;width:4px;height:100%;
+  background:var(--theme-red);transform:scaleY(0);transform-origin:top;
+  transition:transform .4s;
+}
+.assignment-card:hover{transform:translateY(-6px);box-shadow:0 10px 25px rgba(0,0,0,.15);}
+.assignment-card:hover::before{transform:scaleY(1)}
+.assignment-card h3{font-size:18px;margin-bottom:12px;color:var(--theme-gray);}
+.assignment-card p{font-size:15px;color:#555;line-height:1.6;}
+.more-link{display:inline-block;margin-top:10px;color:var(--theme-red);font-weight:bold;text-decoration:none;}
+.more-link:hover{text-decoration:underline;}
+
+/* ===== 7. 第一 & 第二课堂 – 终极完美版：左图右文 + 标题贴近红框 ===== */
+.section-title{
+  max-width: var(--max-width);
+  margin: 80px auto 20px auto !important;   /* 关键：距离红框只留 20px */
+  text-align: center;
+  font-size: 0;
+}
+
+.section-title span:first-child{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 38px;
+  color: var(--theme-red);
+  margin-right: 0.3em;
+}
+.section-title span:last-child{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 32px;
+  color: var(--theme-gray);
+}
+.section-title::after{
+  content: "";
+  display: block;
+  height: 4px;
+  width: 140px;
+  margin: 10px auto 0;
+  background: linear-gradient(to right,transparent,var(--theme-red) 35%,var(--theme-red) 65%,transparent);
+  border-radius: 2px;
+}
+
+.flipped-classroom{
+  max-width: var(--max-width);
+  margin: 0 auto 60px;
+  background: #fffef9;
+  border: 2px solid var(--theme-red);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-columns: 320px 1fr;   /* 左图固定宽，右文自适应 */
+  align-items: center;
+  overflow: hidden;
+}
+
+/* 左边图片 */
+.flipped-classroom .classroom-image{
+  padding: 40px 20px 40px 50px;
+  text-align: center;
+}
+.flipped-classroom .classroom-image img{
+  width: 240px;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 16px rgba(0,0,0,.12);
+}
+
+/* 右边文字 */
+.flipped-classroom .classroom-content{
+  padding: 50px 70px 50px 30px;
+  position: relative;
+  min-height: 300px;
+}
+.flipped-classroom .classroom-content p{
+  font-size: 16.5px;
+  font-weight: 500;
+  line-height: 2.1;
+  color: #000;
+  text-align: justify;
+  margin: 0;
+}
+.detail-link{
+  position: absolute;
+  right: 60px;
+  bottom: 50px;
+  padding: 12px 28px;
+  background: var(--theme-red);
+  color: #fffef9;
+  font-size: 16px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  box-shadow: var(--shadow);
+  transition: all .3s;
+}
+.detail-link:hover{
+  background: #7a1621;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,.2);
+}
+
+/* 手机端自动上下布局 */
+@media (max-width: 768px) {
+  .flipped-classroom{
+    grid-template-columns: 1fr;
+  }
+  .flipped-classroom .classroom-image{
+    padding: 40px 20px;
+  }
+  .flipped-classroom .classroom-content{
+    padding: 30px 40px 70px;
+    text-align: center;
+  }
+  .detail-link{
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+
+/* ===== 9. 响应式 ===== */
+@media (max-width:768px){
+  .flipped-classroom .classroom-with-image{flex-direction:column;text-align:center;}
+  .classroom-image img{width:100%;max-width:300px;}
+  .flipped-classroom{padding:40px 6vw;}
+  .classroom-content h2 span:first-child{font-size:9vw;}
+  .classroom-content h2 span:last-child{font-size:7vw;}
+  .assignment-title span:first-child{font-size:11vw;}
+  .assignment-title span:last-child{font-size:9vw;}
+  .section-title span:first-child{font-size:11vw;}
+  .section-title span:last-child{font-size:9vw;}
+  .search-box{flex-direction:column;max-width:100%;}
+  .search-box input,.search-box button{width:100%;margin:6px 0;}
+}
+
+/* ===== 10. 底部 ===== */
+.footer-text{
+  text-align:center;
+  margin:80px auto;
+  font-size:15px;
+  color:var(--theme-gray);
+}
