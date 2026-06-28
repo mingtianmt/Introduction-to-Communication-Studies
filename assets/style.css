@@ -240,14 +240,16 @@ body{
 }
 
 .classroom-sidebar{
-  background:#fffef9;
-  border:2px solid var(--theme-red);
+  border: 2px solid var(--theme-red);
   border-radius: var(--radius);
-  padding: 30px 40px;
+  background: #fffef9;
+  padding: 30px;
 
-  display:flex;
-  flex-direction:column;
-  gap: 14px;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;   /* ⭐关键：垂直居中 */
+  gap: 12px;                 /* ⭐替代 space-between */
 }
 
 .classroom-sidebar a{
