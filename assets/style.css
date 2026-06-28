@@ -204,6 +204,7 @@ body{
 }
 
 .flipped-classroom{
+  text-indent: 2em;
   max-width: var(--max-width);
   margin: 0 auto 60px;
 
