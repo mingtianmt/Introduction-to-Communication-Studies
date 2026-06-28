@@ -330,7 +330,7 @@ body{
 
 /* 右边文字 */
 .flipped-classroom .classroom-content{
-  padding: 50px 70px 50px 30px;
+  padding: 50px 50px 80px 50px;
   position: relative;
   min-height: 300px;
 }
