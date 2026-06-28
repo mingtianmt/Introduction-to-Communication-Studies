@@ -345,11 +345,8 @@ body{
 
 .detail-link{
   position: absolute;
-  left: 30%;
-  bottom: 30px;
-  /* 新增这一行，向左偏移按钮自身宽度的50%，实现按钮中心点和容器中线重合 */
-  transform: translateX(-30%);
-
+  right: 60px;
+  bottom: 50px;
   padding: 12px 28px;
   background: var(--theme-red);
   color: #fffef9;
