@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第二课堂详情 - 传播学概论 教学网站</title>
+
+  <style>
+    @font-face{
+      font-family:'FangZhengBangShu';
+      src:url('../../assets/fonts/title.ttf') format('truetype');
+    }
+
+    :root{
+      --paper:#F5F2E8;
+      --ink:#1E1E1E;
+      --cinnabar:#9B1D2B;
+      --radius:8px;
+      --shadow:0 4px 12px rgba(0,0,0,.08);
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box}
+
+    body{
+      font-family:"思源黑体","Microsoft YaHei",sans-serif;
+      background:#F5F2E8 url('../assets/background.jpg') center/cover fixed;
+      color:var(--ink);
+      padding-top:100px;
+      line-height:1.85;
+    }
+
+    /* ===== header ===== */
+    .header{
+      position:fixed;
+      top:0;left:0;right:0;
+      z-index:999;
+      background:#fffef9;
+      border-bottom:2px solid var(--cinnabar);
+      box-shadow:var(--shadow);
+      display:flex;
+      flex-direction:column;
+      padding:18px 5vw;
+    }
+
+    .site-title{
+      color:var(--cinnabar);
+    }
+
+    .site-title span:first-child{
+      font-size:42px;
+      font-family:'FangZhengBangShu', serif;
+    }
+
+    .site-title span:last-child{
+      font-size:25px;
+      font-family:'Times New Roman', serif;
+    }
+
+    .subtitle{
+      align-self:flex-end;
+      font-size:16px;
+      margin-top:4px;
+      opacity:.8;
+    }
+
+    /* ===== container ===== */
+    .container{
+      max-width:1200px;
+      margin:0 auto;
+      padding:80px 5vw 40px;
+    }
+
+    /* ===== case layout ===== */
+    .case-block{
+      margin-bottom:60px;
+    }
+
+    .case-title{
+      font-size:22px;
+      color:var(--cinnabar);
+      margin-bottom:12px;
+      font-family:'Times New Roman', serif;
+    }
+
+    .case-desc{
+      font-size:16px;
+      color:#1E1E1E;
+      margin-bottom:18px;
+      line-height:2;
+    }
+
+    .case-sub h4{
+      font-size:16px;
+      color:var(--cinnabar);
+      margin-top:14px;
+      margin-bottom:6px;
+      font-weight:600;
+    }
+
+    .case-sub p{
+      font-size:15px;
+      color:#333;
+      line-height:1.9;
+      padding-left:10px;
+    }
+
+    .divider{
+      height:1px;
+      background:rgba(155,29,43,.25);
+      margin:30px 0;
+    }
+
+    /* footer */
+    .footer-text{
+      text-align:center;
+      margin:80px 0;
+      font-size:15px;
+      color:#1E1E1E;
+    }
+
+    .highlight-red{color:var(--cinnabar);}
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <h1 class="site-title">
+    <span>传播学概论</span><span>教学网站</span>
+  </h1>
+  <p class="subtitle">
+    翻转课堂 | 第一课堂 | <span class="highlight-red">第二课堂</span>
+  </p>
+</header>
+
+<main class="container">
+
+  <!-- ================= CASE 1 ================= -->
+  <section class="case-block">
+    <h2 class="case-title">案例一：AI生成内容（AIGC）的传播伦理与信任危机</h2>
+
+    <p class="case-desc">
+      随着生成式人工智能快速进入内容生产链条，AIGC在提升传播效率的同时，也引发了关于真实性、作者性与媒介信任的系统性争议。
+      本案例聚焦AI生成内容在新闻、广告与社交媒体中的扩散机制及其伦理边界。
+    </p>
+
+    <div class="case-sub">
+      <h4>文献材料</h4>
+      <p>（1）Floridi, L. (2023). AI ethics in generative systems.</p>
+      <p>（2）相关平台治理报告与行业白皮书</p>
+
+      <h4>观点综述</h4>
+      <p>
+        学界普遍认为AIGC并非单纯的技术问题，而是涉及“认知真实性重构”的传播结构变迁。
+        批评者强调其可能削弱信息可验证性，而支持者则认为其扩展了表达能力与生产民主化。
+      </p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ================= CASE 2 ================= -->
+  <section class="case-block">
+    <h2 class="case-title">案例二：算法推荐与信息茧房争议</h2>
+
+    <p class="case-desc">
+      算法推荐是否必然导致信息窄化，是近年来争议激烈的议题。
+      公共舆论倾向于技术批判，强调算法的“定制”效应加剧信息孤岛；
+      学术研究则更趋审慎，主张多维归因。
+    </p>
+
+    <div class="case-sub">
+      <h4>文献材料</h4>
+      <p>（1）Pariser, E. The Filter Bubble</p>
+      <p>（2）Algorithmic Culture 相关研究论文</p>
+
+      <h4>观点综述</h4>
+      <p>
+        本案例梳理两派核心观点，探讨算法、用户选择与信息生态之间的复杂互动关系。
+        当前研究逐渐从“技术决定论”转向“人机协同结构”的分析框架。
+      </p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ================= CASE 3 ================= -->
+  <section class="case-block">
+    <h2 class="case-title">案例三：网红舆情与MCN机构治理乱象</h2>
+
+    <p class="case-desc">
+      网红“塌房”事件频发，反映出个体道德失范与MCN机构结构性压力的双重逻辑。
+      平台机制与资本逻辑共同塑造了高频更新与高风险并存的内容生态。
+    </p>
+
+    <div class="case-sub">
+      <h4>文献材料</h4>
+      <p>（1）MCN机构运作机制研究</p>
+      <p>（2）平台治理与网红经济相关论文</p>
+
+      <h4>观点综述</h4>
+      <p>
+        本案例从个体责任与资本逻辑两个层面展开分析，
+        探讨平台分配机制、MCN工业化运作与网红可替代性如何共同塑造失序生态，
+        并讨论系统性治理路径的可能性。
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<section class="footer-text">
+  <p>重庆大学新闻学院在线课堂</p>
+</section>
+
+</body>
+</html>
