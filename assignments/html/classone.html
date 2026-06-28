@@ -3,38 +3,44 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>第一课堂详情 - 中国新闻传播史教学网站</title>
+  <title>第一课堂 - 传播学概论教学网站</title>
 
   <style>
     @font-face{
       font-family:'FangZhengBangShu';
       src:url('../../assets/fonts/title.ttf') format('truetype');
     }
-    /* ---------- 0. 古籍纸纹变量 ---------- */
+
     :root{
       --paper:#F5F2E8;
       --ink:#1E1E1E;
       --cinnabar:#9B1D2B;
       --gold:#C9A145;
-      --radius:8px;
+      --radius:10px;
       --shadow:0 4px 12px rgba(0,0,0,.08);
     }
 
-    /* ---------- 1. 基础重置 ---------- */
-    *{margin:0;padding:0;box-sizing:border-box}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
     body{
       font-family:"思源黑体","Microsoft YaHei",sans-serif;
-      background: #F5F2E8 url('../assets/background.jpg') center/cover;
-      background-attachment: fixed;   /* 想固定就保留 */
+      background:#F5F2E8 url('../assets/background.jpg') center/cover;
+      background-attachment:fixed;
       color:var(--ink);
       padding-top:100px;
       line-height:1.8;
     }
 
-    /* ---------- 2. 顶部卷轴 header ---------- */
+    /* ===== 顶部 ===== */
     .header{
       position:fixed;
-      top:0;left:0;right:0;
+      top:0;
+      left:0;
+      right:0;
       z-index:999;
       background:#fffef9;
       border-bottom:2px solid var(--cinnabar);
@@ -43,269 +49,154 @@
       flex-direction:column;
       padding:18px 5vw;
     }
-    .site-title{
-      letter-spacing:1px;
-      color:var(--cinnabar);
-    }
+
     .site-title span:first-child{
       font-size:42px;
       font-family:'FangZhengBangShu', serif;
+      color:var(--cinnabar);
     }
+
     .site-title span:last-child{
       font-size:25px;
       font-family:'Times New Roman', Times, serif;
     }
+
     .subtitle{
       align-self:flex-end;
       font-size:16px;
-      color:var(--ink);
       opacity:.8;
-      margin-top:4px;
     }
 
-    /* ---------- 3. 容器 ---------- */
+    /* ===== 主容器 ===== */
     .container{
       max-width:1200px;
       margin:0 auto;
       padding:20px 5vw;
     }
 
-    /* ---------- 4. 章节标题：竖排小篆前饰 ---------- */
+    /* ===== 标题 ===== */
     .section-title{
       position:relative;
-      margin:40px 0 30px;
-      font-family:'Times New Roman', Times, serif;
+      margin:50px 0 20px;
       font-size:26px;
       color:var(--cinnabar);
+      font-family:'Times New Roman', Times, serif;
       padding-left:40px;
     }
+
     .section-title::before{
       content:'课';
       position:absolute;
-      left:0;top:-8px;
+      left:0;
+      top:-8px;
       font-size:40px;
       opacity:.15;
     }
 
-    /* ---------- 5. 三栏网格：左图右文 ---------- */
-    .three-col-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:30px;
-      margin-bottom:60px;
-    }
-    .card{
+    /* ===== 总述 ===== */
+    .theory-intro{
       background:#fffef9;
+      padding:16px 18px;
+      border-left:3px solid var(--cinnabar);
+      box-shadow:var(--shadow);
+      margin-bottom:25px;
+      font-size:15px;
+    }
+
+    /* ===== 学派卡片 ===== */
+    .school{
+      background:#fffef9;
+      border:1px solid rgba(155,29,43,.35);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:18px;
+      margin-bottom:18px;
+      transition:transform .25s ease;
+    }
+
+    .school:hover{
+      transform:translateY(-3px);
+    }
+
+    .school-title{
+      font-size:18px;
+      font-weight:bold;
+      color:var(--cinnabar);
+      margin-bottom:8px;
+    }
+
+    .school p{
+      font-size:15px;
+      color:#333;
+      margin-bottom:10px;
+    }
+
+    /* ===== 查看详情按钮 ===== */
+    .detail-btn{
+      display:inline-block;
+      padding:6px 14px;
+      font-size:14px;
+      color:var(--cinnabar);
       border:1px solid var(--cinnabar);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      display:flex;
-      flex-direction:column;
-      overflow:hidden;
-      transition:transform .3s;
-    }
-    .card:hover{transform:translateY(-4px)}
-    .card img{
-      width:100%;
-      height:400px;
-      object-fit:cover;
-      border-bottom:1px solid var(--cinnabar);
-    }
-    .card .desc{
-      padding:16px;
-      font-size:15px;
-      color:#444;
-      flex:1;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-    }
-
-    /* ---------- 8. 教学影片：隐形框三列 ---------- */
-    .movie{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);   /* 一行三列 */
-      grid-template-rows: repeat(2, auto);
-      gap:30px;                              /* 列间距 */
-      margin-bottom:60px;
-    }
-    .movie .item{                            /* 隐形框：只负责布局，无视觉 */
-      display:flex;
-      flex-direction:column;                 /* 图在上，字在下 */
-      align-items:center;                    /* 水平居中 */
-    }
-    .movie img{
-      width:100%;
-      height:auto;
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      transition:transform .3s;
-    }
-    .movie img:hover{
-     transform:translateY(-4px);
-    }
-    .movie .desc{                            /* 图片下方文字 */
-      margin-top:12px;
-      font-size:15px;
-      color:var(--ink);
-    }
-
-    .line2-left   { grid-column: 1 / 2; }   /* 第二行第一列 */
-    .line2-center { grid-column: 2 / 3; }   /* 第二行第二列 */
-
-    /* ---------- 6. 响应式 ---------- */
-    @media(max-width:1024px){
-      .three-col-grid{grid-template-columns:repeat(2,1fr)}
-    }
-    @media(max-width:600px){
-      .three-col-grid{grid-template-columns:1fr}
-    }
-
-    /* ---------- 7. 页面底部文本：中新史课程资料库 ---------- */
-    .footer-text {
-      text-align: center;              /* 文本居中 */
-      margin-top: 77px;                /* 上方留空 */
-      margin-bottom: 77px;             /* 下方留空 */
-      font-size: 15px;                 /* 适中的字号 */
-      color: #1E1E1E;                  /* 灰色，替代 var(--theme-gray) 如果没有定义 */
-    }
-
-    /* 高亮红色文字 */
-    .highlight-red {
-      color: var(--cinnabar); /* 红色，与页面主题红一致 */
-    }
-
-    /*  仅网络课程观摩极简列表  */
-    .plain-db{
-      max-width:760px;
-      margin:0 auto 60px;
-      padding:0;
-      list-style:none;
-      border-left:2px solid var(--cinnabar);
-      padding-left:1em;
-      margin-left:-1em;
-    }
-    .plain-db li{
-      margin:8px 0;
-      line-height:1.7;
-    }
-    .plain-db a{
-      color:var(--ink);
+      border-radius:6px;
       text-decoration:none;
-      border-bottom:1px solid transparent;
+      transition:.3s;
     }
-    .plain-db a:hover{
-      border-bottom-color:var(--cinnabar);
+
+    .detail-btn:hover{
+      background:var(--cinnabar);
+      color:#fff;
     }
 
   </style>
 </head>
 
 <body>
-  <!-- 顶部卷轴 -->
-  <header class="header">
-    <h1 class="site-title">
-      <span>中国新闻传播史</span><span>教学网站</span>
-    </h1>
-    <p class="subtitle">
-      翻转课堂 | <span class="highlight-red">第一课堂</span> | 第二课堂 
+
+<header class="header">
+  <h1 class="site-title">
+    <span>传播学概论</span><span>教学网站</span>
+  </h1>
+  <p class="subtitle">翻转课堂 | 第一课堂 | 第二课堂</p>
+</header>
+
+<main class="container">
+
+  <!-- ===== 1.1 ===== -->
+  <h2 class="section-title">1.1 经典理论 | 三大流派</h2>
+
+  <div class="theory-intro">
+    传播学的理论版图主要由三大流派构成：经验学派以实证方法探究传播效果与受众行为；批判学派立足社会结构与权力关系，反思媒介与意识形态；媒介环境学派则将媒介技术本身视为环境，考察其对感知、社会与文明的塑造。三者构成理解传播现象的多维视角。
+  </div>
+
+  <!-- ===== 经验学派 ===== -->
+  <div class="school">
+    <div class="school-title">经验学派</div>
+    <p>
+      经验学派是传播学的主流范式之一，以量化方法为核心，聚焦媒介效果、受众行为与传播过程。代表性理论包括议程设置、两级传播、使用与满足、培养理论等。拉扎斯菲尔德、霍夫兰、施拉姆等学者奠定了其方法论与制度基础，形成了以“有限效果论”为标志的研究传统。
     </p>
-  </header>
+    <a class="detail-btn" href="1.1.1.html">查看详情 →</a>
+  </div>
 
-  <main class="container">
-    <h2 class="section-title">第一课堂：线上学习资料</h2>
+  <!-- ===== 批判学派 ===== -->
+  <div class="school">
+    <div class="school-title">批判学派</div>
+    <p>
+      批判学派立足于欧陆哲学与马克思主义传统，关注传播活动中的权力、意识形态与不平等结构。法兰克福学派的文化工业理论、霍尔的编码/解码理论、福柯的规训思想等，构成了其对主流传播秩序的深刻反思。该学派为理解媒介与统治、认同与抵抗提供了重要的批判工具。
+    </p>
+    <a class="detail-btn" href="1.1.2.html">查看详情 →</a>
+  </div>
 
-    <!-- 教材推荐 -->
-    <h2 class="section-title">教材推荐</h2>
-    <div class="three-col-grid">
-      <div class="card">
-        <img src="../assets/book1.jpg" alt="教材1">
-        <div class="desc">《中国新闻传播史》（第4版）<br>中国人民大学出版社</div>
-      </div>
-      <div class="card">
-        <img src="../assets/book2.jpg" alt="教材2">
-        <div class="desc">《中国新闻传播史》<br>高等教育出版社</div>
-      </div>
-      <div class="card">
-        <img src="../assets/book3.jpg" alt="教材3">
-        <div class="desc">《中国近代报业发展史》<br>中国社会科学出版社</div>
-      </div>
-    </div>
+  <!-- ===== 媒介环境学派 ===== -->
+  <div class="school">
+    <div class="school-title">媒介环境学派</div>
+    <p>
+      媒介环境学派将媒介技术视为文化变革与心理塑造的核心动力。英尼斯提出“媒介偏向论”，麦克卢汉断言“媒介即讯息”，波兹曼警示“技术垄断”，梅罗维茨融合情境理论，共同构成该学派对媒介形式而非内容的持续关切。其研究视野拓展了传播学对技术与文明关系的理解深度。
+    </p>
+    <a class="detail-btn" href="1.1.3.html">查看详情 →</a>
+  </div>
 
-    <!-- 主要报刊数据库 -->
-    <h2 class="section-title">主要报刊数据库</h2>
-    <ul class="plain-db">
-      <li>中国国家数字图书馆（<a href="https://www.nlc.cn/web/index.shtml" target="_blank">https://www.nlc.cn/web/index.shtml</a>）</li>
-      <li>国家图书馆·民国期刊/报纸数据库（<a href="http://mylib.nlc.cn/web/guest/minguoqikan" target="_blank">http://mylib.nlc.cn/web/guest/minguoqikan</a>）</li>
-      <li>中国历史文献总库·近代报纸数据库（请通过重庆大学图书馆访问）</li>
-      <li>中国历史文献总库·红色文献数据库（请通过重庆大学图书馆访问）</li>
-      <li>晚清民国期刊全文数据库（请通过重庆大学图书馆访问）</li>
-      <li>大成老旧刊全文数据库（请通过重庆大学图书馆访问）</li>
-      <li>全国报刊索引（<a href="http://www.cnbksy.cn/home" target="_blank">http://www.cnbksy.cn/home</a>）（请通过重庆大学图书馆访问）</li>
-      <li>爱如生晚清民国大报库（请通过重庆大学图书馆访问）</li>
-      <li>《人民日报》图文数据库（请通过重庆大学图书馆访问）</li>
-      <li>民国文献大全（需接入校园VPN，通过重庆大学图书馆访问）</li>
-      <li>《大公报》全文检索数据库（<a href="http://tk.dhcdb.com.tw/tknewsc/tknewskm" target="_blank">http://tk.dhcdb.com.tw/tknewsc/tknewskm</a>）</li>
-      <li>瀚堂近代报刊数据库（<a href="http://www.neohytung.com/Main.aspx" target="_blank">http://www.neohytung.com/Main.aspx</a>）</li>
-    </ul>
+</main>
 
-    <!-- 网络课程观摩 -->
-    <h2 class="section-title">网络课程观摩</h2>
-    <div class="movie">
-      <div class="item">
-        <a href="https://www.icourse163.org/" target="_blank" rel="noopener">
-          <img src="../assets/course1.jpg" alt="课程1">
-        </a>
-        <div class="desc">中国大学&nbspMOOC</div>
-      </div>
-      
-      <div class="item">
-        <a href="https://www.icourses.cn/home/" target="_blank" rel="noopener">
-          <img src="../assets/course2.jpg" alt="课程2">
-        </a>
-        <div class="desc">爱课程</div>
-      </div>
-
-      <div class="item">
-        <a href="https://www.xuetangx.com/" target="_blank" rel="noopener">
-          <img src="../assets/course3.jpg" alt="课程3">
-        </a>
-        <div class="desc">学堂在线</div>
-      </div>
-    </div>
-
-    <!-- 教学影片 -->
-    <h2 class="section-title">教学影片</h2>
-    <div class="movie">
-      <div class="item">
-        <img src="../assets/movie1.jpg" alt="影片1">
-        <div class="desc">《一份报纸的抗战》（大公报）</div>
-      </div>
-      <div class="item">
-        <img src="../assets/movie2.jpg" alt="影片2">
-        <div class="desc">《烽火木刻》第六集《凝望》</div>
-      </div>
-      <div class="item">
-        <img src="../assets/movie3.jpg" alt="影片3">
-        <div class="desc">《觉醒年代》</div>
-      </div>
-      <div class="item line2-left">
-        <img src="../assets/movie4.jpg" alt="影片4">
-        <div class="desc">《川盐抗战》（新华日报）</div>
-      </div>      
-      <div class="item line2-center">
-        <img src="../assets/movie5.jpg" alt="影片5">
-        <div class="desc">《抗日战场上的办报人》</div>
-      </div>
-    </div>
-  </main>
-
-      <!-- 第二课堂部分结束后，添加空白和文本 -->
-  <section class="footer-text">
-    <p>中新史课程资料库</p>
-    <p>重庆市高等教育教学改革研究一般项目资助（项目号：223012）</p>
-  </section>
 </body>
 </html>
