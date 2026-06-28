@@ -204,10 +204,32 @@ body{
 }
 
 .flipped-classroom{
-  display:grid;
-  grid-template-columns: 1.2fr 1fr;
+  max-width: var(--max-width);
+  margin: 0 auto 60px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 30px;
-  align-items: stretch;
+
+  background: #fffef9;
+  border: 2px solid var(--theme-red);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 40px;
+}
+
+.left-box{
+  background:#fffef9;
+  border:2px solid var(--theme-red);
+  border-radius: var(--radius);
+  padding: 30px 40px;
+
+  font-size: 16.5px;
+  line-height: 2.1;
+  color:#000;
+  text-align: justify;
+
+  position: relative;
 }
 
 .classroom-content{
@@ -216,13 +238,14 @@ body{
 }
 
 .classroom-sidebar{
-  border: 2px solid var(--theme-red);
+  background:#fffef9;
+  border:2px solid var(--theme-red);
   border-radius: var(--radius);
-  background: #fffef9;
-  padding: 30px;
+  padding: 30px 40px;
+
   display:flex;
   flex-direction:column;
-  justify-content:space-between;
+  gap: 14px;
 }
 
 .classroom-sidebar a{
