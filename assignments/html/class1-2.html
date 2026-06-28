@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>第二课堂详情 - 传播学概论 教学网站</title>
+  <title>第一课堂 - 传播学概论教学网站</title>
 
   <style>
     @font-face{
@@ -15,24 +15,32 @@
       --paper:#F5F2E8;
       --ink:#1E1E1E;
       --cinnabar:#9B1D2B;
-      --radius:8px;
+      --gold:#C9A145;
+      --radius:10px;
       --shadow:0 4px 12px rgba(0,0,0,.08);
     }
 
-    *{margin:0;padding:0;box-sizing:border-box}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
     body{
       font-family:"思源黑体","Microsoft YaHei",sans-serif;
-      background:#F5F2E8 url('../assets/background.jpg') center/cover fixed;
+      background:#F5F2E8 url('../assets/background.jpg') center/cover;
+      background-attachment:fixed;
       color:var(--ink);
       padding-top:100px;
-      line-height:1.85;
+      line-height:1.8;
     }
 
-    /* ===== header ===== */
+    /* ===== 顶部 ===== */
     .header{
       position:fixed;
-      top:0;left:0;right:0;
+      top:0;
+      left:0;
+      right:0;
       z-index:999;
       background:#fffef9;
       border-bottom:2px solid var(--cinnabar);
@@ -42,83 +50,104 @@
       padding:18px 5vw;
     }
 
-    .site-title{
-      color:var(--cinnabar);
-    }
-
     .site-title span:first-child{
       font-size:42px;
       font-family:'FangZhengBangShu', serif;
+      color:var(--cinnabar);
     }
 
     .site-title span:last-child{
       font-size:25px;
-      font-family:'Times New Roman', serif;
+      font-family:'Times New Roman', Times, serif;
     }
 
     .subtitle{
       align-self:flex-end;
       font-size:16px;
-      margin-top:4px;
       opacity:.8;
     }
 
-    /* ===== container ===== */
+    /* ===== 主容器 ===== */
     .container{
       max-width:1200px;
       margin:0 auto;
-      padding:80px 5vw 40px;
+      padding:20px 5vw;
     }
 
-    /* ===== case layout ===== */
-    .case-block{
-      margin-bottom:60px;
-    }
-
-    .case-title{
-      font-size:22px;
+    /* ===== 标题 ===== */
+    .section-title{
+      position:relative;
+      margin:50px 0 20px;
+      font-size:26px;
       color:var(--cinnabar);
-      margin-bottom:12px;
-      font-family:'Times New Roman', serif;
+      font-family:'Times New Roman', Times, serif;
+      padding-left:40px;
     }
 
-    .case-desc{
-      font-size:16px;
-      color:#1E1E1E;
+    .section-title::before{
+      content:'课';
+      position:absolute;
+      left:0;
+      top:-8px;
+      font-size:40px;
+      opacity:.15;
+    }
+
+    /* ===== 总述 ===== */
+    .theory-intro{
+      background:#fffef9;
+      padding:16px 18px;
+      border-left:3px solid var(--cinnabar);
+      box-shadow:var(--shadow);
+      margin-bottom:25px;
+      font-size:15px;
+    }
+
+    /* ===== 学派卡片 ===== */
+    .school{
+      background:#fffef9;
+      border:1px solid rgba(155,29,43,.35);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:18px;
       margin-bottom:18px;
-      line-height:2;
+      transition:transform .25s ease;
     }
 
-    .case-sub h4{
-      font-size:16px;
+    .school:hover{
+      transform:translateY(-3px);
+    }
+
+    .school-title{
+      font-size:18px;
+      font-weight:bold;
       color:var(--cinnabar);
-      margin-top:14px;
-      margin-bottom:6px;
-      font-weight:600;
+      margin-bottom:8px;
     }
 
-    .case-sub p{
+    .school p{
       font-size:15px;
       color:#333;
-      line-height:1.9;
-      padding-left:10px;
+      margin-bottom:10px;
     }
 
-    .divider{
-      height:1px;
-      background:rgba(155,29,43,.25);
-      margin:30px 0;
+    /* ===== 查看详情按钮 ===== */
+    .detail-btn{
+      display:inline-block;
+      padding:6px 14px;
+      font-size:14px;
+      color:var(--cinnabar);
+      border:1px solid var(--cinnabar);
+      border-radius:6px;
+      text-decoration:none;
+      transition:.3s;
     }
 
-    /* footer */
-    .footer-text{
-      text-align:center;
-      margin:80px 0;
-      font-size:15px;
-      color:#1E1E1E;
+    .detail-btn:hover{
+      background:var(--cinnabar);
+      color:#fff;
     }
 
-    .highlight-red{color:var(--cinnabar);}
   </style>
 </head>
 
@@ -128,84 +157,70 @@
   <h1 class="site-title">
     <span>传播学概论</span><span>教学网站</span>
   </h1>
-  <p class="subtitle">
-    翻转课堂 | 第一课堂 | <span class="highlight-red">第二课堂</span>
-  </p>
+  <p class="subtitle">翻转课堂 | 第一课堂 | 第二课堂</p>
 </header>
 
 <main class="container">
 
-  <!-- ================= CASE 1 ================= -->
-  <section class="case-block">
-    <h2 class="case-title">案例一：AI生成内容（AIGC）的传播伦理与信任危机</h2>
+  <!-- ===== 1.1 ===== -->
+  <h2 class="section-title">1.2 学术前沿 | 当代议题</h2>
 
-    <p class="case-desc">
-      随着生成式人工智能快速进入内容生产链条，AIGC在提升传播效率的同时，也引发了关于真实性、作者性与媒介信任的系统性争议。
-      本案例聚焦AI生成内容在新闻、广告与社交媒体中的扩散机制及其伦理边界。
+  <div class="theory-intro">
+    数字技术的深度嵌入正在重构传播生态，也为传播学开辟了全新的问题域。本板块聚焦AIGC与智能传播、算法推荐与信息窄化、数字断连与数字极简主义三大前沿议题，精选近三年发表于《新闻与传播研究》《国际新闻界》等核心期刊的论文。各主题既有宏观的理论审视，亦有微观的实证分析，旨在呈现学界对这些新兴议题的最新回应，助研习者追踪学术前沿、把握学科动态。
+  </div>
+
+  <!-- ===== 经验学派 ===== -->
+  <div class="school">
+    <div class="school-title">主题一：AIGC与智能传播</div>
+    <p>
+      [1]李晓静, 张敏 &  王雨晨. (2026). 建构人机信任生态层级理论模型——大模型用户访谈的叙事分析. 新闻与传播研究, 33 (3), 71-93+157-158.
+      [2]王国燕 & 金心怡. (2026). 深度伪造视频的感知可信度：视觉素养和认知倾向的双重影响研究. 现代传播(中国传媒大学学报), 48 (3), 133-142. 
+      [3]陈虹 & 张文青. (2026). 权力网络与话语结构的竞争协同：人工智能全球治理政策的战略叙事研究. 新闻与传播研究, 33 (2), 22-40+155-156.
+      [4]周敏, 赵秀丽 &  陈飞扬. (2025). 聊天机器人的脆弱性表达是否会提高人机共情?——一项基于自主开发聊天机器人的实证分析. 新闻与传播研究, 32 (11), 54-76+127.
+      [5]朱鸿军 & 王涛. (2025). “旧困未了，新愁又起”：AI时代主流媒体如何走出新系统性困境. 国际新闻界, 47 (9), 69-85. 
+      [6]陈强. (2025). 权力形态的人工智能：国际传播地缘政治的竞争与博弈. 现代传播(中国传媒大学学报), 47 (7), 50-58. 
+      [7]潘文静 & 孙纪开. (2025). 谁在左右判断?——信源可信度与纠正方式如何影响虚假信息纠正. 新闻与传播研究, 32 (3), 35-53+126-127.
+      [8]钟丁静, 吴风 &  邱锐. (2025). 拟人化与智能化：AI主播媒介性与人机信任关系建构的实证研究. 国际新闻界, 47 (2), 49-71. 
+      [9]陈积银 & 宋春妮. (2025). 守成与创新：人工智能时代的新闻传播教育——基于“学界+业界”双视角. 新闻与传播研究, 32 (1), 19-37+126.
+      [10]丁方舟 & 张多. (2025). “AI只是你的工具吗？”——智能传播生态下短视频博主与AI的人机关系研究. 新闻大学, (1), 1-14+119. 
     </p>
+    <!-- <a class="detail-btn" href="1.1.1.html">查看详情 →</a> -->
+  </div>
 
-    <div class="case-sub">
-      <h4>文献材料</h4>
-      <p>（1）Floridi, L. (2023). AI ethics in generative systems.</p>
-      <p>（2）相关平台治理报告与行业白皮书</p>
-
-      <h4>观点综述</h4>
-      <p>
-        学界普遍认为AIGC并非单纯的技术问题，而是涉及“认知真实性重构”的传播结构变迁。
-        批评者强调其可能削弱信息可验证性，而支持者则认为其扩展了表达能力与生产民主化。
-      </p>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- ================= CASE 2 ================= -->
-  <section class="case-block">
-    <h2 class="case-title">案例二：算法推荐与信息茧房争议</h2>
-
-    <p class="case-desc">
-      算法推荐是否必然导致信息窄化，是近年来争议激烈的议题。
-      公共舆论倾向于技术批判，强调算法的“定制”效应加剧信息孤岛；
-      学术研究则更趋审慎，主张多维归因。
+  <!-- ===== 批判学派 ===== -->
+  <div class="school">
+    <div class="school-title">主题二：算法推荐与信息窄化</div>
+    <p>
+      [1]渠润泽 & 徐敬宏. (2026). 解构“信息茧房”：算法、用户偏好与信息生态的动态交互. 新闻与传播研究, 33 (3), 46-70+157.
+      [2]洪杰文 & 常静宜. (2026). 锚点与断点：平台如何塑造算法的“可信”——基于15个算法推荐类媒体App规则体系的考察. 新闻大学, (2), 76-90+122. 
+      [3]严玲艳. (2025). 算法推荐视角下中国功夫的国际传播网络圈层现象研究——基于建构主义技术观的探讨. 新闻大学, (11), 45-58+118-119. 
+      [4]黄阳坤, 师文 &  陈昌凤. (2025). 平台算法如何形塑新闻机构的可见性?——针对智能推荐算法的审计研究. 新闻与传播研究, 32 (9), 61-76+127.
+      [5]甘浩辰 & 宋巧丽. (2025). “技术”与“权力”感知下的社交媒体用户算法抵抗行为意愿与演化机制研究. 新闻与传播研究, 32 (7), 69-86+127.
+      [6]曾润喜 & 张媛媛. (2025). 游击艺术与削足适履：用户抵抗与服从算法的矛盾实践. 新闻与传播研究, 32 (4), 48-62+127.
+      [7]顾晨昱. (2025). 算法推荐内容对老年人健康信息回避行为的影响机制研究——数字反哺的干预实验. 国际新闻界, 47 (2), 27-48. 
+      [8]洪杰文 & 陈嵘伟. (2022). 意识激发与规则想象：用户抵抗算法的战术依归和实践路径. 新闻与传播研究, 29 (8), 38-56+126-127.
+      [9]温凤鸣 & 解学芳. (2022). 短视频推荐算法的运行逻辑与伦理隐忧——基于行动者网络理论视角. 西南民族大学学报(人文社会科学版), 43 (2), 160-169.
+      [10]周葆华. (2022). 算法、可见性与注意力分配：智能时代舆论基础逻辑的历史转换. 西南民族大学学报(人文社会科学版), 43 (1), 143-152.
+      [11]彭兰. (2020). 导致信息茧房的多重因素及“破茧”路径. 新闻界, (1), 30-38+73. 
     </p>
+    <!-- <a class="detail-btn" href="1.1.2.html">查看详情 →</a> -->
+  </div>
 
-    <div class="case-sub">
-      <h4>文献材料</h4>
-      <p>（1）Pariser, E. The Filter Bubble</p>
-      <p>（2）Algorithmic Culture 相关研究论文</p>
-
-      <h4>观点综述</h4>
-      <p>
-        本案例梳理两派核心观点，探讨算法、用户选择与信息生态之间的复杂互动关系。
-        当前研究逐渐从“技术决定论”转向“人机协同结构”的分析框架。
-      </p>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- ================= CASE 3 ================= -->
-  <section class="case-block">
-    <h2 class="case-title">案例三：网红舆情与MCN机构治理乱象</h2>
-
-    <p class="case-desc">
-      网红“塌房”事件频发，反映出个体道德失范与MCN机构结构性压力的双重逻辑。
-      平台机制与资本逻辑共同塑造了高频更新与高风险并存的内容生态。
+  <!-- ===== 媒介环境学派 ===== -->
+  <div class="school">
+    <div class="school-title">主题三：“数字断连与数字极简主义”</div>
+    <p>
+      [1]李伟 & 王乐乐. (2025). “比较焦虑”的媒介呈现与青年反向实践——基于优绩主义批判的视角. 中国青年研究, (8), 81-89. 
+      [2]陈淼 & 荣浩浩. (2024). 从数字依赖到数字简化：青年群体“数字极简行动”的主体性实践. 新闻与传播研究, 31 (10), 71-89+127-128.
+      [3]毕雨辉. (2024). 与数字共舞：青年数字极简主义者的生活实践与自我调适. 中国青年研究, (5), 78-87. 
+      [5]常江. (2023). 作为媒介抵抗文化的数字极简主义. 南京社会科学, (12), 83-92. 
+      [6]常江. (2023). 当“断联”成为奢侈品：数字戒断的媒介文化想象. 西南民族大学学报(人文社会科学版), 44 (9), 119-129.
+      [7]徐冠群 & 朱珊. (2023). 媒介技术的抵抗：青年“数字极简主义者”的生活实践——基于豆瓣话题小组的田野调查. 传媒观察, (8), 93-103.
+      [8]徐偲骕 & 姚建华. (2021). 数字极简主义：当代青年人互联网“隐居生活”初探. 南方传媒研究, (5), 64-69.
+      [9]袁艳. (2021). “慢”从何来？——数字时代的手帐及其再中介化. 国际新闻界, 43 (3), 19-39. 
     </p>
-
-    <div class="case-sub">
-      <h4>文献材料</h4>
-      <p>（1）MCN机构运作机制研究</p>
-      <p>（2）平台治理与网红经济相关论文</p>
-
-      <h4>观点综述</h4>
-      <p>
-        本案例从个体责任与资本逻辑两个层面展开分析，
-        探讨平台分配机制、MCN工业化运作与网红可替代性如何共同塑造失序生态，
-        并讨论系统性治理路径的可能性。
-      </p>
-    </div>
-  </section>
+    <!-- <a class="detail-btn" href="1.1.3.html">查看详情 →</a> -->
+  </div>
 
 </main>
 

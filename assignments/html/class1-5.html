@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>第二课堂详情 - 传播学概论 教学网站</title>
+  <title>第一课堂 - 传播学概论教学网站</title>
 
   <style>
     @font-face{
@@ -15,24 +15,32 @@
       --paper:#F5F2E8;
       --ink:#1E1E1E;
       --cinnabar:#9B1D2B;
-      --radius:8px;
+      --gold:#C9A145;
+      --radius:10px;
       --shadow:0 4px 12px rgba(0,0,0,.08);
     }
 
-    *{margin:0;padding:0;box-sizing:border-box}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
     body{
       font-family:"思源黑体","Microsoft YaHei",sans-serif;
-      background:#F5F2E8 url('../assets/background.jpg') center/cover fixed;
+      background:#F5F2E8 url('../assets/background.jpg') center/cover;
+      background-attachment:fixed;
       color:var(--ink);
       padding-top:100px;
-      line-height:1.85;
+      line-height:1.8;
     }
 
-    /* ===== header ===== */
+    /* ===== 顶部 ===== */
     .header{
       position:fixed;
-      top:0;left:0;right:0;
+      top:0;
+      left:0;
+      right:0;
       z-index:999;
       background:#fffef9;
       border-bottom:2px solid var(--cinnabar);
@@ -42,83 +50,104 @@
       padding:18px 5vw;
     }
 
-    .site-title{
-      color:var(--cinnabar);
-    }
-
     .site-title span:first-child{
       font-size:42px;
       font-family:'FangZhengBangShu', serif;
+      color:var(--cinnabar);
     }
 
     .site-title span:last-child{
       font-size:25px;
-      font-family:'Times New Roman', serif;
+      font-family:'Times New Roman', Times, serif;
     }
 
     .subtitle{
       align-self:flex-end;
       font-size:16px;
-      margin-top:4px;
       opacity:.8;
     }
 
-    /* ===== container ===== */
+    /* ===== 主容器 ===== */
     .container{
       max-width:1200px;
       margin:0 auto;
-      padding:80px 5vw 40px;
+      padding:20px 5vw;
     }
 
-    /* ===== case layout ===== */
-    .case-block{
-      margin-bottom:60px;
-    }
-
-    .case-title{
-      font-size:22px;
+    /* ===== 标题 ===== */
+    .section-title{
+      position:relative;
+      margin:50px 0 20px;
+      font-size:26px;
       color:var(--cinnabar);
-      margin-bottom:12px;
-      font-family:'Times New Roman', serif;
+      font-family:'Times New Roman', Times, serif;
+      padding-left:40px;
     }
 
-    .case-desc{
-      font-size:16px;
-      color:#1E1E1E;
+    .section-title::before{
+      content:'课';
+      position:absolute;
+      left:0;
+      top:-8px;
+      font-size:40px;
+      opacity:.15;
+    }
+
+    /* ===== 总述 ===== */
+    .theory-intro{
+      background:#fffef9;
+      padding:16px 18px;
+      border-left:3px solid var(--cinnabar);
+      box-shadow:var(--shadow);
+      margin-bottom:25px;
+      font-size:15px;
+    }
+
+    /* ===== 学派卡片 ===== */
+    .school{
+      background:#fffef9;
+      border:1px solid rgba(155,29,43,.35);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:18px;
       margin-bottom:18px;
-      line-height:2;
+      transition:transform .25s ease;
     }
 
-    .case-sub h4{
-      font-size:16px;
+    .school:hover{
+      transform:translateY(-3px);
+    }
+
+    .school-title{
+      font-size:18px;
+      font-weight:bold;
       color:var(--cinnabar);
-      margin-top:14px;
-      margin-bottom:6px;
-      font-weight:600;
+      margin-bottom:8px;
     }
 
-    .case-sub p{
+    .school p{
       font-size:15px;
       color:#333;
-      line-height:1.9;
-      padding-left:10px;
+      margin-bottom:10px;
     }
 
-    .divider{
-      height:1px;
-      background:rgba(155,29,43,.25);
-      margin:30px 0;
+    /* ===== 查看详情按钮 ===== */
+    .detail-btn{
+      display:inline-block;
+      padding:6px 14px;
+      font-size:14px;
+      color:var(--cinnabar);
+      border:1px solid var(--cinnabar);
+      border-radius:6px;
+      text-decoration:none;
+      transition:.3s;
     }
 
-    /* footer */
-    .footer-text{
-      text-align:center;
-      margin:80px 0;
-      font-size:15px;
-      color:#1E1E1E;
+    .detail-btn:hover{
+      background:var(--cinnabar);
+      color:#fff;
     }
 
-    .highlight-red{color:var(--cinnabar);}
   </style>
 </head>
 
@@ -128,84 +157,54 @@
   <h1 class="site-title">
     <span>传播学概论</span><span>教学网站</span>
   </h1>
-  <p class="subtitle">
-    翻转课堂 | 第一课堂 | <span class="highlight-red">第二课堂</span>
-  </p>
+  <p class="subtitle">翻转课堂 | 第一课堂 | 第二课堂</p>
 </header>
 
 <main class="container">
 
-  <!-- ================= CASE 1 ================= -->
-  <section class="case-block">
-    <h2 class="case-title">案例一：AI生成内容（AIGC）的传播伦理与信任危机</h2>
+  <!-- ===== 1.1 ===== -->
+  <h2 class="section-title">1.5 拓展阅读｜开阔视野</h2>
 
-    <p class="case-desc">
-      随着生成式人工智能快速进入内容生产链条，AIGC在提升传播效率的同时，也引发了关于真实性、作者性与媒介信任的系统性争议。
-      本案例聚焦AI生成内容在新闻、广告与社交媒体中的扩散机制及其伦理边界。
+  <div class="theory-intro">
+    传播学理论资源丰富，本页面精选三类基础书目，供研习者按需取用：第一部分为学科通论教材，助读者建立认知框架；第二部分为传播学史，以学科制度化的关键节点勾勒思想演进脉络；第三部分为经典思想源流，呈现杜威、李普曼、芒福德等对传播研究产生深刻影响的邻近学科文本。三部分由框架而脉络、由脉络而根基，兼顾入门之便与深耕之需。
+  </div>
+  <h2 class="section-title">学科基础与通论教材</h2>
+  <!-- ===== 经验学派 ===== -->
+  <div class="school">
+    <p>
+      [1]《西方传播学理论评析》编写组. 西方传播学理论评析[M]. 北京: 高等教育出版社, 2021.
+      [2]刘海龙. 大众传播理论：范式与流派[M]. 北京: 中国人民大学出版社, 2008.
+      [3]郭庆光. 传播学教程（第二版）[M]. 北京: 中国人民大学出版社, 2011.
+      [4] [美]沃纳·赛佛林, 小詹姆斯·坦卡德. 传播理论：起源、方法与应用[M]. 郭镇之, 译. 北京: 中国传媒大学出版社, 2006.
+      [5][英]丹尼斯·麦奎尔. 麦奎尔大众传播理论[M]. 崔保国, 李琨, 译. 北京: 清华大学出版社, 2006.
+      [6][美]斯坦利·J·巴兰, 丹尼斯·K·戴维斯. 大众传播理论：基础、争鸣与未来（第三版）[M]. 曹书乐, 译. 北京: 清华大学出版社, 2014.
+      [7][美]威尔伯·施拉姆, 威廉·波特. 传播学概论（第二版）[M]. 何道宽, 译. 北京: 中国人民大学出版社, 2010.
+      [8][美]斯蒂芬·李特约翰, 凯伦·福斯. 人类传播理论[M]. 史安斌, 译. 北京: 清华大学出版社, 2009.
+      [9][美]埃姆·格里芬. 初识传播学：在信息社会正确认知自我、他人及世界（第7版）[M]. 展江, 译. 北京: 北京联合出版公司, 2016.
     </p>
+      <!-- <a class="detail-btn" href="1.1.1.html">查看详情 →</a> -->
+  </div>
 
-    <div class="case-sub">
-      <h4>文献材料</h4>
-      <p>（1）Floridi, L. (2023). AI ethics in generative systems.</p>
-      <p>（2）相关平台治理报告与行业白皮书</p>
-
-      <h4>观点综述</h4>
-      <p>
-        学界普遍认为AIGC并非单纯的技术问题，而是涉及“认知真实性重构”的传播结构变迁。
-        批评者强调其可能削弱信息可验证性，而支持者则认为其扩展了表达能力与生产民主化。
-      </p>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- ================= CASE 2 ================= -->
-  <section class="case-block">
-    <h2 class="case-title">案例二：算法推荐与信息茧房争议</h2>
-
-    <p class="case-desc">
-      算法推荐是否必然导致信息窄化，是近年来争议激烈的议题。
-      公共舆论倾向于技术批判，强调算法的“定制”效应加剧信息孤岛；
-      学术研究则更趋审慎，主张多维归因。
+  <h2 class="section-title">传播学史</h2>
+  <!-- ===== 经验学派 ===== -->
+  <div class="school">
+    <p>
+      [1][美]E·M·罗杰斯. 传播学史：一种传记式的方法[M]. 殷晓蓉, 译. 上海: 上海译文出版社, 2012.
     </p>
+      <!-- <a class="detail-btn" href="1.1.1.html">查看详情 →</a> -->
+  </div>
 
-    <div class="case-sub">
-      <h4>文献材料</h4>
-      <p>（1）Pariser, E. The Filter Bubble</p>
-      <p>（2）Algorithmic Culture 相关研究论文</p>
-
-      <h4>观点综述</h4>
-      <p>
-        本案例梳理两派核心观点，探讨算法、用户选择与信息生态之间的复杂互动关系。
-        当前研究逐渐从“技术决定论”转向“人机协同结构”的分析框架。
-      </p>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- ================= CASE 3 ================= -->
-  <section class="case-block">
-    <h2 class="case-title">案例三：网红舆情与MCN机构治理乱象</h2>
-
-    <p class="case-desc">
-      网红“塌房”事件频发，反映出个体道德失范与MCN机构结构性压力的双重逻辑。
-      平台机制与资本逻辑共同塑造了高频更新与高风险并存的内容生态。
+  <h2 class="section-title">经典思想源流</h2>
+  <!-- ===== 经验学派 ===== -->
+  <div class="school">
+    <p>
+      [1][美]沃尔特·李普曼. 舆论[M]. 常江, 肖寒, 译. 北京: 北京大学出版社, 2018.
+      [2][美]约翰·杜威. 公众及其问题[M]. 本书翻译组, 译. 上海: 复旦大学出版社, 2015.
+      [3][美]刘易斯·芒福德. 技术与文明[M]. 宋俊岭, 倪文彦, 译. 北京: 中国建筑工业出版社, 2009.
+      [4][法]阿芒·马特拉, 米歇尔·马特拉. 传播学简史[M]. 北京: 中国人民大学出版社, 2008.
     </p>
-
-    <div class="case-sub">
-      <h4>文献材料</h4>
-      <p>（1）MCN机构运作机制研究</p>
-      <p>（2）平台治理与网红经济相关论文</p>
-
-      <h4>观点综述</h4>
-      <p>
-        本案例从个体责任与资本逻辑两个层面展开分析，
-        探讨平台分配机制、MCN工业化运作与网红可替代性如何共同塑造失序生态，
-        并讨论系统性治理路径的可能性。
-      </p>
-    </div>
-  </section>
+      <!-- <a class="detail-btn" href="1.1.1.html">查看详情 →</a> -->
+  </div>  
 
 </main>
 

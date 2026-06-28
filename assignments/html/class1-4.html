@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>第二课堂详情 - 传播学概论 教学网站</title>
+  <title>第一课堂 - 传播学概论教学网站</title>
 
   <style>
     @font-face{
@@ -15,24 +15,32 @@
       --paper:#F5F2E8;
       --ink:#1E1E1E;
       --cinnabar:#9B1D2B;
-      --radius:8px;
+      --gold:#C9A145;
+      --radius:10px;
       --shadow:0 4px 12px rgba(0,0,0,.08);
     }
 
-    *{margin:0;padding:0;box-sizing:border-box}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
     body{
       font-family:"思源黑体","Microsoft YaHei",sans-serif;
-      background:#F5F2E8 url('../assets/background.jpg') center/cover fixed;
+      background:#F5F2E8 url('../assets/background.jpg') center/cover;
+      background-attachment:fixed;
       color:var(--ink);
       padding-top:100px;
-      line-height:1.85;
+      line-height:1.8;
     }
 
-    /* ===== header ===== */
+    /* ===== 顶部 ===== */
     .header{
       position:fixed;
-      top:0;left:0;right:0;
+      top:0;
+      left:0;
+      right:0;
       z-index:999;
       background:#fffef9;
       border-bottom:2px solid var(--cinnabar);
@@ -42,83 +50,104 @@
       padding:18px 5vw;
     }
 
-    .site-title{
-      color:var(--cinnabar);
-    }
-
     .site-title span:first-child{
       font-size:42px;
       font-family:'FangZhengBangShu', serif;
+      color:var(--cinnabar);
     }
 
     .site-title span:last-child{
       font-size:25px;
-      font-family:'Times New Roman', serif;
+      font-family:'Times New Roman', Times, serif;
     }
 
     .subtitle{
       align-self:flex-end;
       font-size:16px;
-      margin-top:4px;
       opacity:.8;
     }
 
-    /* ===== container ===== */
+    /* ===== 主容器 ===== */
     .container{
       max-width:1200px;
       margin:0 auto;
-      padding:80px 5vw 40px;
+      padding:20px 5vw;
     }
 
-    /* ===== case layout ===== */
-    .case-block{
-      margin-bottom:60px;
-    }
-
-    .case-title{
-      font-size:22px;
+    /* ===== 标题 ===== */
+    .section-title{
+      position:relative;
+      margin:50px 0 20px;
+      font-size:26px;
       color:var(--cinnabar);
-      margin-bottom:12px;
-      font-family:'Times New Roman', serif;
+      font-family:'Times New Roman', Times, serif;
+      padding-left:40px;
     }
 
-    .case-desc{
-      font-size:16px;
-      color:#1E1E1E;
+    .section-title::before{
+      content:'课';
+      position:absolute;
+      left:0;
+      top:-8px;
+      font-size:40px;
+      opacity:.15;
+    }
+
+    /* ===== 总述 ===== */
+    .theory-intro{
+      background:#fffef9;
+      padding:16px 18px;
+      border-left:3px solid var(--cinnabar);
+      box-shadow:var(--shadow);
+      margin-bottom:25px;
+      font-size:15px;
+    }
+
+    /* ===== 学派卡片 ===== */
+    .school{
+      background:#fffef9;
+      border:1px solid rgba(155,29,43,.35);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:18px;
       margin-bottom:18px;
-      line-height:2;
+      transition:transform .25s ease;
     }
 
-    .case-sub h4{
-      font-size:16px;
+    .school:hover{
+      transform:translateY(-3px);
+    }
+
+    .school-title{
+      font-size:18px;
+      font-weight:bold;
       color:var(--cinnabar);
-      margin-top:14px;
-      margin-bottom:6px;
-      font-weight:600;
+      margin-bottom:8px;
     }
 
-    .case-sub p{
+    .school p{
       font-size:15px;
       color:#333;
-      line-height:1.9;
-      padding-left:10px;
+      margin-bottom:10px;
     }
 
-    .divider{
-      height:1px;
-      background:rgba(155,29,43,.25);
-      margin:30px 0;
+    /* ===== 查看详情按钮 ===== */
+    .detail-btn{
+      display:inline-block;
+      padding:6px 14px;
+      font-size:14px;
+      color:var(--cinnabar);
+      border:1px solid var(--cinnabar);
+      border-radius:6px;
+      text-decoration:none;
+      transition:.3s;
     }
 
-    /* footer */
-    .footer-text{
-      text-align:center;
-      margin:80px 0;
-      font-size:15px;
-      color:#1E1E1E;
+    .detail-btn:hover{
+      background:var(--cinnabar);
+      color:#fff;
     }
 
-    .highlight-red{color:var(--cinnabar);}
   </style>
 </head>
 
@@ -128,85 +157,193 @@
   <h1 class="site-title">
     <span>传播学概论</span><span>教学网站</span>
   </h1>
-  <p class="subtitle">
-    翻转课堂 | 第一课堂 | <span class="highlight-red">第二课堂</span>
-  </p>
+  <p class="subtitle">翻转课堂 | 第一课堂 | 第二课堂</p>
 </header>
 
 <main class="container">
 
-  <!-- ================= CASE 1 ================= -->
-  <section class="case-block">
-    <h2 class="case-title">案例一：AI生成内容（AIGC）的传播伦理与信任危机</h2>
+  <!-- ===== 1.1 ===== -->
+  <h2 class="section-title">1.4 视听资源｜教学影像</h2>
 
-    <p class="case-desc">
-      随着生成式人工智能快速进入内容生产链条，AIGC在提升传播效率的同时，也引发了关于真实性、作者性与媒介信任的系统性争议。
-      本案例聚焦AI生成内容在新闻、广告与社交媒体中的扩散机制及其伦理边界。
+  <div class="theory-intro">
+    本板块汇集学术讲坛与影像片单两类视听资源，旨在以多元媒介形式辅助课堂教学。学术讲坛部分收录了国内外优质播客、系列讲座与在线课程，覆盖传播学基础理论至媒介伦理前沿议题；影像片单则遴选十余部与传播学核心概念深度关联的纪录片与剧情片，每一部均可与课程关键理论形成对话。
+  </div>
+
+  <h2 class="section-title">学术讲坛</h2>
+
+  <!-- ===== 经验学派 ===== -->
+  <div class="school">
+    <div class="school-title">（1）播客：传学有道</div>
+    <p>
+      《传学有道》是由复旦大学新闻学院传播学系教授邓建国主持的一档知识类个人播客。节目名称融合“传播学”与“传道授业”双重意涵，旨在从传播学理论出发，跨及科技、哲学、文化及社会科学等多个领域，形成以传播学为棱镜的跨学科观察视角。
     </p>
-
-    <div class="case-sub">
-      <h4>文献材料</h4>
-      <p>（1）Floridi, L. (2023). AI ethics in generative systems.</p>
-      <p>（2）相关平台治理报告与行业白皮书</p>
-
-      <h4>观点综述</h4>
-      <p>
-        学界普遍认为AIGC并非单纯的技术问题，而是涉及“认知真实性重构”的传播结构变迁。
-        批评者强调其可能削弱信息可验证性，而支持者则认为其扩展了表达能力与生产民主化。
-      </p>
+    <div class="theory-intro">
+    链接：https://www.xiaoyuzhoufm.com/podcast/6800560da6f1319357fcce34
     </div>
-  </section>
+    <!-- <a class="detail-btn" href="1.1.1.html">查看详情 →</a> -->
+  </div>
 
-  <div class="divider"></div>
-
-  <!-- ================= CASE 2 ================= -->
-  <section class="case-block">
-    <h2 class="case-title">案例二：算法推荐与信息茧房争议</h2>
-
-    <p class="case-desc">
-      算法推荐是否必然导致信息窄化，是近年来争议激烈的议题。
-      公共舆论倾向于技术批判，强调算法的“定制”效应加剧信息孤岛；
-      学术研究则更趋审慎，主张多维归因。
+  <!-- ===== 批判学派 ===== -->
+  <div class="school">
+    <div class="school-title">（2）讲座：中国人民大学“新传小春晚”系列讲座</div>
+    <p>
+      中国人民大学新闻学院每年秋季学期举办的“新传小春晚”系列学术讲座，是该院近年来最具人气的学术品牌活动。讲座邀请校内外前沿学者，围绕数字新闻学、平台社会、国际传播、AI与媒介伦理等年度热点议题，进行约90分钟的深度分享，并设有现场问答环节。讲座风格兼顾学术深度与公众可理解性，面向校内外免费开放，B站同步直播并保留完整回放。
     </p>
-
-    <div class="case-sub">
-      <h4>文献材料</h4>
-      <p>（1）Pariser, E. The Filter Bubble</p>
-      <p>（2）Algorithmic Culture 相关研究论文</p>
-
-      <h4>观点综述</h4>
-      <p>
-        本案例梳理两派核心观点，探讨算法、用户选择与信息生态之间的复杂互动关系。
-        当前研究逐渐从“技术决定论”转向“人机协同结构”的分析框架。
-      </p>
+    <div class="theory-intro">
+    链接：https://space.bilibili.com/587932796/lists/7157810?type=season
     </div>
-  </section>
+    <!-- <a class="detail-btn" href="1.1.2.html">查看详情 →</a> -->
+  </div>
 
-  <div class="divider"></div>
-
-  <!-- ================= CASE 3 ================= -->
-  <section class="case-block">
-    <h2 class="case-title">案例三：网红舆情与MCN机构治理乱象</h2>
-
-    <p class="case-desc">
-      网红“塌房”事件频发，反映出个体道德失范与MCN机构结构性压力的双重逻辑。
-      平台机制与资本逻辑共同塑造了高频更新与高风险并存的内容生态。
+  <!-- ===== 媒介环境学派 ===== -->
+  <div class="school">
+    <div class="school-title">（3）在线课程：大众传播理论：范式与流派</div>
+    <p>
+      这门由中国人民大学刘海龙教授主讲的课程是传播学进阶学习的经典资源，被誉为新闻传播考研的“宝典”。课程体系宏大，系统地解构了客观经验主义、诠释经验主义及批判理论三大研究范式，深入探讨了媒介技术、符号互动、效果研究等核心议题。全95讲的沉浸式讲解逻辑缜密、旁征博引，不仅适合备考冲刺，更能帮助学习者建立全面的学科认知地图。
     </p>
-
-    <div class="case-sub">
-      <h4>文献材料</h4>
-      <p>（1）MCN机构运作机制研究</p>
-      <p>（2）平台治理与网红经济相关论文</p>
-
-      <h4>观点综述</h4>
-      <p>
-        本案例从个体责任与资本逻辑两个层面展开分析，
-        探讨平台分配机制、MCN工业化运作与网红可替代性如何共同塑造失序生态，
-        并讨论系统性治理路径的可能性。
-      </p>
+    <div class="theory-intro">
+    链接：https://www.bilibili.com/video/BV1EE411j7Vv/?spm_id_from=333.788.recommend_more_video.3&trackid=web_related_0.router-related-2206146-trbxs.1765718946195.128
     </div>
-  </section>
+    <!-- <a class="detail-btn" href="1.1.3.html">查看详情 →</a> -->
+  </div>
 
+  <div class="school">
+    <div class="school-title">（4）Coursera公开课：传播学导论（Introduction to Communication Science）</div>
+    <p>
+      这门由阿姆斯特丹大学在Coursera平台开设的课程是一场面向全球的跨文化学术体验。课程打破了传播学的学科界限，从基础模型出发，深入探索大众传播、人际与人内传播的历史脉络与主导范式，并融入了社会学和心理学的多维视角。全英授课搭配中文字幕，既引导初学者反思当代沟通方式的演变，也为高阶学习者提供了理解算法文化与“景观社会”的宏观批判视角，是了解欧陆传播学研究思维的理想窗口
+    </p>
+    <div class="theory-intro">
+    链接：https://open.163.com/newview/movie/free?pid=AIAL9EM72&mid=CIAL9EM7U
+    </div>
+    <!-- <a class="detail-btn" href="1.1.3.html">查看详情 →</a> -->
+  </div>
+
+  <div class="school">
+    <div class="school-title">（5）Coursera公开课：《媒体伦理与治理》（Media Ethics & Governance）</div>
+    <p>
+      这门由阿姆斯特丹大学传播学系开设的全英文慕课，系统探讨当代全球媒体环境中的核心伦理困境：新闻真实与虚假信息的边界、算法公平与透明度、数字隐私与监控、仇恨言论与内容审核、AI伦理与机器决策责任等。课程每单元包含约15分钟的视频讲座、核心文献精读、案例分析和讨论区互评作业。全英授课，配有中文字幕。
+    </p>
+    <div class="theory-intro">
+    链接：https://www.coursera.org/learn/media-ethics-governance?msockid=03a5e89cad0e698f1525fc7cacdc68b2
+    </div>
+    <!-- <a class="detail-btn" href="1.1.3.html">查看详情 →</a> -->
+  </div>
+
+  <h2 class="section-title">影像片单</h2>
+
+  <div class="school">
+    <div class="school-title">（1）《监视资本主义：智能陷阱》（The Social Dilemma, 2020）</div>
+    <p>
+      这部由杰夫·奥洛夫斯基执导的Netflix原创纪录片，邀请前谷歌、脸书、推特、Pinterest等科技公司的核心工程师和设计师——特里斯坦·哈里斯（前谷歌设计伦理学家）、阿萨·拉斯金（前火狐工程师）、贾斯汀·罗森斯坦（前脸书工程师）等——以亲历者身份揭露社交媒体平台如何利用算法推荐、行为心理学和数据挖掘，设计出具有成瘾性的产品，以最大化用户停留时间和广告收入。影片采用“专家访谈+剧情演绎”的交叉叙事。剧情部分以一个美国家庭为缩影，生动呈现了社交媒体成瘾、信息茧房、青少年心理健康危机等问题的微观影响。片中提出的标志性警示——“如果你不为产品付费，你就是产品本身”（If you're not paying for the product, you are the product）——已成为数字时代传播伦理的标志性表述。
+    </p>
+    <div class="theory-intro">
+    链接：https://www.bilibili.com/video/BV1rPW5zJEKJ/?spm_id_from=333.337.search-card.all.click&vd_source=b71f5dc4a05298a2f5fe980b9986b820
+    </div>
+    <!-- <a class="detail-btn" href="1.1.3.html">查看详情 →</a> -->
+  </div>
+
+  <div class="school">
+    <div class="school-title">（2）《第四公民》（Citizenfour, 2014）</div>
+    <p>
+      这部由劳拉·珀特拉斯执导的纪录片获得第87届奥斯卡最佳纪录片奖。影片以第一手视角记录了2013年“棱镜门”事件：前美国国家安全局（NSA）承包商雇员爱德华·斯诺登在香港向珀特拉斯和《卫报》记者格林沃尔德泄露了美国政府全球大规模监控计划的绝密文件。影片全程在事件发生的第一现场拍摄——香港酒店房间内的八天密集对话，真实呈现了斯诺登的决策心理、记者团队的伦理挣扎、以及文件公开前夕的巨大压力。影片不仅是一部新闻纪实作品，更直接引发了全球范围内关于监控社会、数字隐私、公民抗命与新闻自由的持久讨论。片名“Citizenfour”是斯诺登最初联系珀特拉斯时使用的化名。
+    </p>
+    <div class="theory-intro">
+    链接：微信视频号-https://mp.weixin.qq.com/s/h0LnOdmfeOLr90BqrPGPaQ
+    </div>
+    <!-- <a class="detail-btn" href="1.1.3.html">查看详情 →</a> -->
+  </div>
+
+  <div class="school">
+    <div class="school-title">（3）《隐私大盗》（The Great Hack, 2019）</div>
+    <p>
+      这部Netflix原创纪录片聚焦2018年剑桥分析公司数据丑闻。影片通过追踪三位核心人物——揭露剑桥分析运作的前员工布列塔尼·凯瑟、起诉剑桥分析获取个人数据的美国教授大卫·卡罗尔、以及持续调查该事件的《卫报》记者卡罗尔·卡德沃拉迪尔——还原了8700万脸书用户数据如何在未经知情同意的情况下被收集、建模，并用于影响2016年美国总统选举和英国脱欧公投的选举结果。影片深入揭示了“数据武器化”的运作链条：个性心理测量模型如何将选民分为“可说服者”和“需要压制者”，微目标定位广告如何针对个体弱点施加影响。这一事件标志着全球公众对数据隐私和平台权力的认知转折点。
+    </p>
+    <div class="theory-intro">
+    链接：微信视频号-https://mp.weixin.qq.com/s/mz9dXdykqw7LabywREPkUw
+    </div>
+    <!-- <a class="detail-btn" href="1.1.3.html">查看详情 →</a> -->
+  </div>
+
+  <div class="school">
+    <div class="school-title">（4）社交网络</div>
+    <p>
+      这部由大卫·芬奇执导、艾伦·索金编剧的影片获得第83届奥斯卡最佳改编剧本等三项大奖，以Facebook创始人马克·扎克伯格为原型，讲述了这一全球最大社交网络平台从哈佛校园的宿舍创意到硅谷商业帝国的崛起历程，及其背后的创意归属纠纷与友情背叛。影片通过两场法律诉讼——扎克伯格与温克尔沃斯兄弟的创意剽窃案、以及与联合创始人爱德华多·萨维林的股权稀释案——构建了多重叙事视角，呈现了同一段创业史中不同当事人对“真相”的差异化叙述。从传播学角度看，影片为理解“创新扩散”理论提供了绝佳的经验案例：Facebook从哈佛校园到常春藤联盟，再到全美高校和全球用户的扩散路径，典型地体现了罗杰斯所描述的五类采纳者曲线和创新五项感知属性的作用机制。同时，扎克伯格在片中对“连接人与人”的技术执念与对人际关系的冷漠处理之间的巨大张力，也深刻呼应了媒介环境学派关于“技术延伸必然伴随某种截除”的核心命题——他创造了人类历史上最大规模的社交连接工具，却亲手毁掉了自己最珍贵的友情。
+    </p>
+    <div class="theory-intro">
+    链接：B站大会员-https://www.bilibili.com/bangumi/play/ep331044?theme=movie&spm_id_from=333.337.0.0
+    </div>
+    <!-- <a class="detail-btn" href="1.1.3.html">查看详情 →</a> -->
+  </div>
+
+  <div class="school">
+    <div class="school-title">（5）聚焦</div>
+    <p>
+      这部由汤姆·麦卡锡执导的影片获得第88届奥斯卡最佳影片和最佳原创剧本两项大奖，真实还原了《波士顿环球报》“聚焦”调查报道团队在2001-2002年间揭露波士顿天主教会系统性性侵儿童丑闻的新闻生产过程。影片没有追求戏剧化的个人英雄主义叙事，而是以一种近乎纪录片式的克制风格，细致呈现了一篇调查报道从最初的线索追踪、档案挖掘、受害者采访、到最终出版的全过程。从传播学角度看，影片是塔克曼“新闻生产社会学”和“策略性仪式”概念的绝佳影像教材：记者们如何在截稿压力下反复核实信源、如何在与教会机构的博弈中坚守“呈现对立信源”的专业程序、如何在“这个选题太敏感，可能冒犯读者”的编辑部压力下维护报道的独立性——这些细节完整地展示了“客观性”作为一套制度化操作程序如何在新闻实践中被落实，也揭示了个别时刻突破“策略性仪式”、真正实现新闻业社会监督功能的可能条件。影片还深刻呈现了“沉默的螺旋”机制在社会议题中的运作：在长达数十年的时间里，教会通过权力网络和系统性保密使得受害者个体始终处于“被孤立的恐惧”中而不敢发声，“聚焦”团队的报道最终打破了这一螺旋。
+    </p>
+    <div class="theory-intro">
+    链接：微信视频号- https://mp.weixin.qq.com/s/vApVEbHOXrjOw1CaHIUS2A
+    </div>
+    <!-- <a class="detail-btn" href="1.1.3.html">查看详情 →</a> -->
+  </div>
+
+  <div class="school">
+    <div class="school-title">（6）搜索</div>
+    <p>
+      《搜索》是陈凯歌执导的现实主义剧情片，改编自网络小说《请你原谅我》。影片以一起公交车“拒让座”事件为起点，层层揭开网络暴力、媒体操守、公众道德审判与个体命运之间的复杂纠葛。
+女主角叶蓝秋（高圆圆 饰）在获知自己罹患淋巴癌晚期后，精神濒临崩溃。她在公交车上因拒绝给一位老人让座，并与乘客发生言语冲突，被实习记者杨佳琪用手机拍下。电视台新闻主编陈若兮（姚晨 饰）嗅到话题热度，刻意将视频剪辑后播出，并配上“墨镜姐”等标签，迅速引爆舆论。在随后的几天里，叶蓝秋被全网“人肉搜索”——她的身份信息、工作单位、过往经历被逐一曝光，辱骂与诅咒铺天盖地。与此同时，她雇佣的保镖杨守诚（赵又廷 饰）在陪伴其度过最后时光的过程中逐渐理解了她内心的绝望。当真相——叶蓝秋的病历——最终浮出水面时，舆论场瞬间反转，但一切都已无法挽回。
+影片并非简单的“反网络暴力”说教，而是通过多线叙事呈现了新闻生产中的选择性加工（陈若兮为追求收视率而夸大冲突）、公众在信息不对称下的道德狂欢、以及资本与权力对媒体议程的隐性操控。叶蓝秋在绝境中既是被审判者，也是一面镜子，映照出围观者急于站队、拒绝等待真相的集体心理。《搜索》以冷静克制的镜头语言，叩问了在社交媒体崛起的年代，“事实”如何被碎片化传播所肢解，“正义”如何沦为情绪的出口。该片上映后引发广泛讨论，被视为中国电影直面网络时代传播伦理问题的代表作之一。
+    </p>
+    <div class="theory-intro">
+    链接：https://www.bilibili.com/video/BV1it411H7fZ/?spm_id_from=333.337.search-card.all.click&vd_source=b71f5dc4a05298a2f5fe980b9986b820
+    </div>
+    <!-- <a class="detail-btn" href="1.1.3.html">查看详情 →</a> -->
+  </div>
+
+  <div class="school">
+    <div class="school-title">（7）景观社会(1974)</div>
+    <p>
+      《景观社会》是法国思想家、电影导演、情境主义国际创始人居伊·德波的首部长片电影，也是其1967年同名理论著作的影像化呈现。全片长约88分钟，以极其激进的形式批判了资本主义消费社会中“真实被景观全面替代”的异化状态。
+德波采用了一种被他称为“异轨”（détournement）的拼贴手法：从商业电影、电视节目、广告片、新闻纪录片、色情影片以及西方经典绘画中截取现成影像素材，再将这些碎片化的画面与画外音中诵读原著段落的文字进行错位并置。画外音以冷静、近乎学术化的语调阐述“景观”“分离”“伪满足”“被动认同”等核心概念，而画面则往往构成对文字的讽刺性对照——例如，当德波讲述“商品世界宣称其自身为民主与自由的最高形式”时，画面剪辑中可能穿插的是生产线上的重复劳动或选美比赛的微笑。影片没有传统意义上的叙事或角色，观众被迫在图像与文字的不协调中主动思考，而非被动消费。
+德波在《景观社会》中提出：在现代资本主义社会中，社会关系不再是人与人之间的直接交往，而是被“景观”——即媒介化、符号化的表象体系——所中介与统治。商品拜物教扩展为景观拜物教，人们的欲望、身份与幸福感均由广告、影视、流行文化所构造的“景观”来定义。真实的社会实践被异化为观看与沉默的消费行为，反抗的可能性则寓于对景观的“异轨式”挪用与情境建构之中。
+《景观社会》不仅是德波对1968年法国“五月风暴”后资本主义文化收编趋势的理论回应，更是一部以自身形式践行其批判主张的电影实验。它拒绝提供任何情感宣泄或观看快感，迫使观者保持批判距离。该片对后来的媒体批判理论、视觉文化研究与独立电影创作产生了深远影响，与《我不是你的黑鬼》《持摄影机的人》等论文电影并列为反景观影像实践的重要里程碑。
+    </p>
+    <div class="theory-intro">
+    链接：微信视频号- https://mp.weixin.qq.com/s/vApVEbHOXrjOw1CaHIUS2Ahttps://www.bilibili.com/video/BV19v411g7gr/?spm_id_from=333.337.search-card.all.click&vd_source=b71f5dc4a05298a2f5fe980b9986b820
+    <!-- <a class="detail-btn" href="1.1.3.html">查看详情 →</a> -->
+  </div>
+
+  <div class="school">
+    <div class="school-title">（8）《楚门的世界》（The Truman Show, 1998）</div>
+    <p>
+      这部由彼得·威尔执导、金·凯瑞主演的科幻剧情片，是诠释李普曼“拟态环境”理论的终极寓言。影片中，主人公楚门从出生起便生活在一个名为“海港镇”的巨大摄影棚内，其全部生活被实时制作为一档全球直播的电视真人秀。海港镇的阳光、海浪、邻里、乃至妻子与挚友，均为剧组精心设计的道具与演员。楚门所认知的“真实世界”，实则是媒介机构为追求商业利益而构筑的完全仿真的符号世界——这一符号世界取代了真实的物理环境，成为楚门认知与行为决策的唯一依据。影片以极端的叙事设定，直观揭示了大众人众媒介如何通过选择性建构与议程设置来塑造“现实”、影响公众认知的核心机制。楚门最终驾船撞向“天际线”幕墙、推开出口大门的经典场景，象征着个体挣脱“拟态环境”的束缚、重返真实的觉醒时刻。该片不仅是电影史上的经典之作，更是传播学课堂阐释媒介建构论最直观的影像教材，适用于讨论议程设置、拟态环境、媒介真实与客观现实之间的关系等议题。
+    </p>
+    <div class="theory-intro">
+    链接：B站大会员：https://www.bilibili.com/bangumi/play/ep250583?theme=movie&spm_id_from=333.337.0.0
+    </div>
+    <!-- <a class="detail-btn" href="1.1.3.html">查看详情 →</a> -->
+  </div>
+
+  <div class="school">
+    <div class="school-title">（9）《网络迷踪》（Searching, 2018）</div>
+    <p>
+      这部由阿尼什·查甘蒂执导的悬疑剧情片，全片以电脑屏幕、手机界面、监控摄像头等数字设备为唯一叙事载体，开创了“桌面电影”的新形式。影片讲述一位父亲通过女儿的社交媒体账号、电子邮件、视频通话记录、银行转账记录等数字痕迹，在虚拟空间中寻找失踪女儿下落的故事。全片叙事完全发生在各类数字界面上，观众与主角同步“使用”搜索引擎、社交平台、直播软件等数字工具获取信息——每一次点击、每一次页面跳转都在推动剧情发展。该片直观展示了数字时代人际传播的媒介化特质：传统的面对面交流被即时通讯取代，情感表达以文本和表情符号为中介，社会关系的维系和断裂均可在平台可见性中被追踪。影片从传播学视角揭示了新媒体技术如何重塑人际关系与信息传播模式：寻人不再是传统意义上的物理搜索，而是对数字痕迹的信息检索与拼合。适合讨论媒介情境理论、数字时代的自我呈现、媒介技术对社会行为的重塑、以及技术赋权与隐私让渡之间的张力等议题。
+    </p>
+    <div class="theory-intro">
+    链接：B站大会员需购买：https://www.bilibili.com/bangumi/play/ep813208
+    </div>
+    <!-- <a class="detail-btn" href="1.1.3.html">查看详情 →</a> -->
+  </div>
+
+  <div class="school">
+    <div class="school-title">（10）《黑镜：急转直下》（Black Mirror: Nosedive, 2016）</div>
+    <p>
+      该集由乔·赖特执导，是《黑镜》第三季的开篇之作。故事设定在一个由“社交评分系统”主导的未来社会——每个人的所有日常互动均被实时量化为一至五分的评分，社交分数决定了个体的社会地位、住房条件、出行便利乃至职业前途。女主角为了实现“4.5分”的人生目标，在每一场社交互动中都进行精心设计的“表演”：对服务员的笑容弧度、对前任婚礼的致辞措辞、对路人偶遇时的表情管理——所有社交行为均被工具化为分数的“投入-产出”计算。该剧集是戈夫曼“拟剧理论”在社交媒体时代的极端演绎。在戈夫曼的分析框架中，日常社会互动本已包含“前台”表演与“后台”真实的区分；但在评分系统的强制量化之下，个体的前台表演被推向极致，后台真实被挤压殆尽，人际交往从意义共享的传播行为异化为分数交换的工具理性操作。该片深刻批判了技术中介如何扭曲传播的本真性——当“点赞”“评分”“可见性”成为社交行为的首要动机时，真诚对话、情感共鸣与意义共享等传播的本质功能便被系统性侵蚀。适合讨论拟剧理论、传播的异化、社交媒体时代的自我呈现、技术伦理与人际交往等议题。
+    </p>
+    <div class="theory-intro">
+    链接：https://www.bilibili.com/video/BV1jUuhzWEpM/?spm_id_from=333.337.search-card.all.click&vd_source=b71f5dc4a05298a2f5fe980b9986b820
+    </div>
+    <!-- <a class="detail-btn" href="1.1.3.html">查看详情 →</a> -->
+  </div>
 </main>
 
 <section class="footer-text">

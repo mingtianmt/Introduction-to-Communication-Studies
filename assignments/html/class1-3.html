@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>第二课堂详情 - 传播学概论 教学网站</title>
+  <title>第一课堂 - 传播学概论教学网站</title>
 
   <style>
     @font-face{
@@ -15,24 +15,32 @@
       --paper:#F5F2E8;
       --ink:#1E1E1E;
       --cinnabar:#9B1D2B;
-      --radius:8px;
+      --gold:#C9A145;
+      --radius:10px;
       --shadow:0 4px 12px rgba(0,0,0,.08);
     }
 
-    *{margin:0;padding:0;box-sizing:border-box}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
     body{
       font-family:"思源黑体","Microsoft YaHei",sans-serif;
-      background:#F5F2E8 url('../assets/background.jpg') center/cover fixed;
+      background:#F5F2E8 url('../assets/background.jpg') center/cover;
+      background-attachment:fixed;
       color:var(--ink);
       padding-top:100px;
-      line-height:1.85;
+      line-height:1.8;
     }
 
-    /* ===== header ===== */
+    /* ===== 顶部 ===== */
     .header{
       position:fixed;
-      top:0;left:0;right:0;
+      top:0;
+      left:0;
+      right:0;
       z-index:999;
       background:#fffef9;
       border-bottom:2px solid var(--cinnabar);
@@ -42,83 +50,104 @@
       padding:18px 5vw;
     }
 
-    .site-title{
-      color:var(--cinnabar);
-    }
-
     .site-title span:first-child{
       font-size:42px;
       font-family:'FangZhengBangShu', serif;
+      color:var(--cinnabar);
     }
 
     .site-title span:last-child{
       font-size:25px;
-      font-family:'Times New Roman', serif;
+      font-family:'Times New Roman', Times, serif;
     }
 
     .subtitle{
       align-self:flex-end;
       font-size:16px;
-      margin-top:4px;
       opacity:.8;
     }
 
-    /* ===== container ===== */
+    /* ===== 主容器 ===== */
     .container{
       max-width:1200px;
       margin:0 auto;
-      padding:80px 5vw 40px;
+      padding:20px 5vw;
     }
 
-    /* ===== case layout ===== */
-    .case-block{
-      margin-bottom:60px;
-    }
-
-    .case-title{
-      font-size:22px;
+    /* ===== 标题 ===== */
+    .section-title{
+      position:relative;
+      margin:50px 0 20px;
+      font-size:26px;
       color:var(--cinnabar);
-      margin-bottom:12px;
-      font-family:'Times New Roman', serif;
+      font-family:'Times New Roman', Times, serif;
+      padding-left:40px;
     }
 
-    .case-desc{
-      font-size:16px;
-      color:#1E1E1E;
+    .section-title::before{
+      content:'课';
+      position:absolute;
+      left:0;
+      top:-8px;
+      font-size:40px;
+      opacity:.15;
+    }
+
+    /* ===== 总述 ===== */
+    .theory-intro{
+      background:#fffef9;
+      padding:16px 18px;
+      border-left:3px solid var(--cinnabar);
+      box-shadow:var(--shadow);
+      margin-bottom:25px;
+      font-size:15px;
+    }
+
+    /* ===== 学派卡片 ===== */
+    .school{
+      background:#fffef9;
+      border:1px solid rgba(155,29,43,.35);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:18px;
       margin-bottom:18px;
-      line-height:2;
+      transition:transform .25s ease;
     }
 
-    .case-sub h4{
-      font-size:16px;
+    .school:hover{
+      transform:translateY(-3px);
+    }
+
+    .school-title{
+      font-size:18px;
+      font-weight:bold;
       color:var(--cinnabar);
-      margin-top:14px;
-      margin-bottom:6px;
-      font-weight:600;
+      margin-bottom:8px;
     }
 
-    .case-sub p{
+    .school p{
       font-size:15px;
       color:#333;
-      line-height:1.9;
-      padding-left:10px;
+      margin-bottom:10px;
     }
 
-    .divider{
-      height:1px;
-      background:rgba(155,29,43,.25);
-      margin:30px 0;
+    /* ===== 查看详情按钮 ===== */
+    .detail-btn{
+      display:inline-block;
+      padding:6px 14px;
+      font-size:14px;
+      color:var(--cinnabar);
+      border:1px solid var(--cinnabar);
+      border-radius:6px;
+      text-decoration:none;
+      transition:.3s;
     }
 
-    /* footer */
-    .footer-text{
-      text-align:center;
-      margin:80px 0;
-      font-size:15px;
-      color:#1E1E1E;
+    .detail-btn:hover{
+      background:var(--cinnabar);
+      color:#fff;
     }
 
-    .highlight-red{color:var(--cinnabar);}
   </style>
 </head>
 
@@ -128,84 +157,48 @@
   <h1 class="site-title">
     <span>传播学概论</span><span>教学网站</span>
   </h1>
-  <p class="subtitle">
-    翻转课堂 | 第一课堂 | <span class="highlight-red">第二课堂</span>
-  </p>
+  <p class="subtitle">翻转课堂 | 第一课堂 | 第二课堂</p>
 </header>
 
 <main class="container">
 
-  <!-- ================= CASE 1 ================= -->
-  <section class="case-block">
-    <h2 class="case-title">案例一：AI生成内容（AIGC）的传播伦理与信任危机</h2>
+  <!-- ===== 1.1 ===== -->
+  <h2 class="section-title">1.3 行业报告 | 权威数据</h2>
 
-    <p class="case-desc">
-      随着生成式人工智能快速进入内容生产链条，AIGC在提升传播效率的同时，也引发了关于真实性、作者性与媒介信任的系统性争议。
-      本案例聚焦AI生成内容在新闻、广告与社交媒体中的扩散机制及其伦理边界。
+  <div class="theory-intro">
+    本板块聚焦传媒产业与网络传播领域的权威行业报告，旨在为课程学习提供反映媒介生态变迁的实证数据支撑。收录的报告涵盖产业蓝皮书、年度发展报告及互联网统计报告等，从不同维度呈现了中国传媒产业的结构转型、新媒体生态的演进态势以及网民的微观行为特征，通过查阅，可构建起从宏观产业结构到中观行业动态、再到微观用户行为的完整数据链。
+  </div>
+
+  <!-- ===== 经验学派 ===== -->
+  <div class="school">
+    <div class="school-title">1.《中国传媒产业发展报告（2025）》</div>
+    <p>
+      《中国传媒产业发展报告（2025）》是由清华大学新闻与传播学院联合多家权威机构编撰的年度性研究报告，自2004年起连续出版，是国内传媒产业研究领域历史最悠久、影响力最广泛的蓝皮书之一。
+      2025年版报告聚焦中国传媒产业在数字经济纵深发展背景下的结构转型与增长动能。报告涵盖报刊、广播、电视、电影、互联网、移动媒体、广告、游戏等主要传媒行业板块，系统分析了各细分领域的市场规模、用户结构、商业模式变化及竞争格局。核心发现包括：短视频和直播电商持续领跑互联网传媒增长，传统媒体数字化转型进入深水区，AIGC技术在内容生产领域的渗透率快速提升，传媒资本市场投融资逻辑发生显著转变。报告还特别增设了“AI赋能传媒”专题章，分析生成式人工智能对新闻采编、影视制作、广告创意等环节的重塑效应及潜在风险。
+      报告基于大量一手调研数据和行业统计资料，提供了中国传媒产业各板块的总产值、增长率、用户规模及集中度等核心指标，是学生从事媒介经济分析、产业研究和比较传播研究的基础数据来源。
     </p>
+      <!-- <a class="detail-btn" href="1.1.1.html">查看详情 →</a> -->
+  </div>
 
-    <div class="case-sub">
-      <h4>文献材料</h4>
-      <p>（1）Floridi, L. (2023). AI ethics in generative systems.</p>
-      <p>（2）相关平台治理报告与行业白皮书</p>
-
-      <h4>观点综述</h4>
-      <p>
-        学界普遍认为AIGC并非单纯的技术问题，而是涉及“认知真实性重构”的传播结构变迁。
-        批评者强调其可能削弱信息可验证性，而支持者则认为其扩展了表达能力与生产民主化。
-      </p>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- ================= CASE 2 ================= -->
-  <section class="case-block">
-    <h2 class="case-title">案例二：算法推荐与信息茧房争议</h2>
-
-    <p class="case-desc">
-      算法推荐是否必然导致信息窄化，是近年来争议激烈的议题。
-      公共舆论倾向于技术批判，强调算法的“定制”效应加剧信息孤岛；
-      学术研究则更趋审慎，主张多维归因。
+  <!-- ===== 批判学派 ===== -->
+  <div class="school">
+    <div class="school-title">2.《中国新媒体发展报告（2025）》</div>
+    <p>
+      该报告由中国社会科学院新闻与传播研究所主持编撰，是国内新媒体研究领域年度最权威的报告之一，自2010年起连续出版。2025年版重点分析了中国社交媒体格局变迁、短视频生态演进、AIGC本土化应用、数字平台治理、网络舆论生态等热点议题。
+      报告基于全国性抽样调查数据，提供了中国网民结构变化、各平台用户画像、内容消费趋势、网络直播与短视频行业发展等一手数据。2025年版特别增设“AIGC在中国”专题章，分析了国产大模型在内容生产领域的应用现状及用户接受度。报告是理解中国数字传播环境的必读资料，可为学生的实证研究和课程论文提供可靠的数据支撑。
     </p>
+    <!-- <a class="detail-btn" href="1.1.2.html">查看详情 →</a> -->
+  </div>
 
-    <div class="case-sub">
-      <h4>文献材料</h4>
-      <p>（1）Pariser, E. The Filter Bubble</p>
-      <p>（2）Algorithmic Culture 相关研究论文</p>
-
-      <h4>观点综述</h4>
-      <p>
-        本案例梳理两派核心观点，探讨算法、用户选择与信息生态之间的复杂互动关系。
-        当前研究逐渐从“技术决定论”转向“人机协同结构”的分析框架。
-      </p>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- ================= CASE 3 ================= -->
-  <section class="case-block">
-    <h2 class="case-title">案例三：网红舆情与MCN机构治理乱象</h2>
-
-    <p class="case-desc">
-      网红“塌房”事件频发，反映出个体道德失范与MCN机构结构性压力的双重逻辑。
-      平台机制与资本逻辑共同塑造了高频更新与高风险并存的内容生态。
+  <!-- ===== 媒介环境学派 ===== -->
+  <div class="school">
+    <div class="school-title">3.《第55次中国互联网络发展状况统计报告》</div>
+    <p>
+      该报告由中国互联网络信息中心（CNNIC）每半年发布一次，是中国互联网发展最基础、最权威的官方统计数据来源。第55次报告提供了截至2024年12月的中国网民规模、互联网普及率、各年龄段和各地区网络接入差异、各类互联网应用（即时通信、搜索引擎、网络新闻、网络视频、网络直播、短视频、在线教育等）的用户规模和使用率等核心数据。
+      报告数据可为“数字鸿沟”“使用与满足”“创新扩散”等理论提供宏观实证支撑，也可作为学生实证研究的基础数据来源。报告全文在CNNIC官网免费公开。
     </p>
-
-    <div class="case-sub">
-      <h4>文献材料</h4>
-      <p>（1）MCN机构运作机制研究</p>
-      <p>（2）平台治理与网红经济相关论文</p>
-
-      <h4>观点综述</h4>
-      <p>
-        本案例从个体责任与资本逻辑两个层面展开分析，
-        探讨平台分配机制、MCN工业化运作与网红可替代性如何共同塑造失序生态，
-        并讨论系统性治理路径的可能性。
-      </p>
-    </div>
-  </section>
+    <!-- <a class="detail-btn" href="1.1.3.html">查看详情 →</a> -->
+  </div>
 
 </main>
 
