@@ -1,1 +1,47 @@
+name: Convert DOCX to HTML and build index
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'assignments/source/**.docx'
+
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: true
+
+      - name: Install pandoc
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y pandoc
+
+      - name: Create output dir
+        run: mkdir -p assignments/html
+
+      - name: Convert all DOCX to HTML
+        run: |
+          shopt -s nullglob
+          for f in assignments/source/*.docx; do
+            base=$(basename "$f" .docx)
+            echo "Converting $f -> assignments/html/${base}.html"
+            pandoc "$f" -s -o "assignments/html/${base}.html" --self-contained --mathjax --metadata title="$base"
+          done
+
+      - name: Build index.json
+        run: |
+          python3 scripts/build_index.py
+
+      - name: Commit generated files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assignments/html/*.html assignments/index.json || true
+          git commit -m "Auto-generate HTML and index from DOCX" || echo "No changes to commit"
+          git push origin HEAD:main
 
