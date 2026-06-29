@@ -347,11 +347,12 @@ body{
   position: absolute;
   right: 40px;
   bottom: 25px;
-  padding: 12px 28px;
-  /* 新增弹性居中代码 */
+  /* 弹性居中核心三行 */
   display: flex;
   justify-content: center;
   align-items: center;
+  /* 统一内边距，上下左右均衡 */
+  padding: 14px 36px;
   background: var(--theme-red);
   color: #fffef9;
   font-size: 16px;
@@ -359,6 +360,14 @@ body{
   text-decoration: none;
   box-shadow: var(--shadow);
   transition: all .3s;
+  /* 消除文字默认行高偏移 */
+  line-height: 1;
+}
+
+.detail-link:hover{
+  background: #7a1621;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,.2);
 }
 
 .detail-link:hover{
