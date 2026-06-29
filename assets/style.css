@@ -343,16 +343,13 @@ body{
   margin: 0;
 }
 
-.detail-link{
-  position: absolute;
-  right: 40px;
-  bottom: 25px;
-  /* 弹性居中核心三行 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* 统一内边距，上下左右均衡 */
-  padding: 14px 36px;
+/* 修改后的 .detail-link 代码 */
+.detail-link {
+  position: absolute;  /* 必须添加：开启绝对定位 */
+  right: 40px;         /* 距离右边边界的距离 */
+  bottom: 30px;        /* 距离底部边界的距离 */
+  
+  padding: 10px 24px;  /* 稍微调整了内边距使比例更好看 */
   background: var(--theme-red);
   color: #fffef9;
   font-size: 16px;
@@ -360,21 +357,18 @@ body{
   text-decoration: none;
   box-shadow: var(--shadow);
   transition: all .3s;
-  /* 消除文字默认行高偏移 */
-  line-height: 1;
+  
+  /* 确保按钮在文字上方且不会因为 text-indent 偏移 */
+  text-indent: 0; 
+  display: inline-block;
 }
 
-.detail-link:hover{
+.detail-link:hover {
   background: #7a1621;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0,0,0,.2);
 }
 
-.detail-link:hover{
-  background: #7a1621;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,0,0,.2);
-}
 
 /* 手机端自动上下布局 */
 @media (max-width: 768px) {
