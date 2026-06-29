@@ -344,6 +344,7 @@ body{
 }
 
 .detail-link{
+  position: absolute;  /* 新增这一行，绝对定位，依附父级relative容器 */
   right: 40px;
   bottom: 25px;
   padding: 12px 28px;
